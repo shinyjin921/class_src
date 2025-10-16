@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+#top{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:2rem
+}
+#top > li{
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+#top > .tooltip {
+  position: absolute;
+  cursor:pointer;
+}
+#top > .tooltip > img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 15px;
+}
+#top >.tooltip > .tip {
+  width: 250px;
+  padding: 1rem;
+  background-color: #222;
+  text-align: center;
+  border-radius:1rem;
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  color: #fff;
+}
+#top > .tooltip > .box{
+  width: 15px;
+  height: 15px;
+  background-color: #222;
+  position: absolute;
+  top: -15px;
+  left: 50px;
+  transform: rotateX(-50%); rotate: 45deg;
+}
+.tooltip > .tip , .box{
+  opacity: 0;
+  transition: all 0.5s;
+}
