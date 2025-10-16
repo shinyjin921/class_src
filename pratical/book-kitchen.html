@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/book-kitche.css">
+  <title>Document</title>
+</head>
+<body>
+  <main>
+    <div class="booksize">
+      <div class="all">
+        <div class="bookimg">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div>
+        <div class="side"></div>
+      </div>
+    </div>
+    <div class="txt">
+      <div>
+        <h1>키친</h1>
+        <span>지은이 ㅣ 요시모토 바나나</span>
+        <h2>이 책을 추천하는 이유</h2>
+        <p>『키친,만월,달빛 그림자』세가지의 단편 소설로 구성되어있는 단편 소설집입니다 인생을 살다 싫어도 마주할수 밖에 없는 소중한 사람에 대한 상실에 의한 상처와 허무감등을 요시모토 바나나 작가님의 특유의 섬세한 감정 묘사로 상처가 아물어가면서 단단해지는 과정을 따듯한 문체로 풀었습니다.
+        </p>
+        <p> "이젠 질렸다고 생각하면서 올려다보는 달빛의, 마음으로 스미는 아름다움을 나는 알고 있다."</p>
+      </div>
+    </div>
+  </main>
+<script>    
+  const book = document.querySelector('.all');
+  console.log( book );
+  book.addEventListener('click', ()=>{
+    book.classList.toggle('flipped');
+  });
+</script>
+
+</body>
+</html>
