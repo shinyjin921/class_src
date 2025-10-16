@@ -29,7 +29,6 @@ main{
 }
 .back{
   background-color: blue;
-  transform: translateZ(35deg) rotate(90deg);
 }
 .side{
   background-color: aqua;
