@@ -1,34 +1,4 @@
 @charset "uth-8";
-
-/* main{
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.conrainer{
-  width: 400px;
-  height: 600px;
-}
-.book > div{
-  width: 100%;
-  height: 100%;
-}
-.book{
-  width: 100%;
-  height: 100%;
-}
-.conrainer > .book > .front{
-  background-color: pink;
-}
-.conrainer > .book > .back{
-  background-image: blue;
-}
-.conrainer > .side{
-  width: 70px;
-  height: 100%;
-  background-color: yellow;
-} */
 main{
   height: 100vh;
   display: flex;
@@ -59,7 +29,7 @@ main{
 }
 .back{
   background-color: blue;
-  transform: translateZ(45deg);
+  transform: translateZ(35deg) rotate(90deg);
 }
 .side{
   background-color: aqua;

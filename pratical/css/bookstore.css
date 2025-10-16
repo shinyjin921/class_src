@@ -45,7 +45,6 @@ main{
 .back{
   background-image: url(../book/back.jfif);
     background-size: cover;
-
   transform: translateZ(-35px) rotateY(180deg)
 }
 .side{
