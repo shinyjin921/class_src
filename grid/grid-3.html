@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기본 레이아웃</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    main{
+      height: 100vh;
+      display: grid;
+      grid-template-areas: 
+      "head head head"
+      "info info cart"
+      "info info cart";
+    }
+    header{
+      background-color: rgb(255, 194, 183);
+      grid-area: head;
+    }
+    section{
+      background-color: rgb(160, 255, 181);
+      grid-area: info;
+    }
+    aside{
+      background-color: rgb(214, 171, 255);
+      grid-area: cart;
+    }
+  </style>
+</head>
+<body>
+  <main>
+  <header></header>
+  <section></section>
+  <aside></aside>
+  </main>
+</body>
+</html>
