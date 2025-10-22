@@ -1,0 +1,119 @@
+body {
+  background-color: #fff;
+  color: #222;
+  padding: 1rem;
+}
+
+header div.mobile-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 3rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+header div.mobile-search img {
+  width: 1rem;
+}
+@media all and (min-width: 768px) {
+  header div.mobile-search {
+    display: none;
+  }
+}
+header nav {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+header nav h1 {
+  display: none;
+}
+@media all and (min-width: 768px) {
+  header nav h1 {
+    display: block;
+  }
+}
+header nav ul.icons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+@media all and (min-width: 768px) {
+  header nav ul.icons {
+    width: auto;
+  }
+}
+header nav ul.icons li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+header nav ul.icons li img {
+  width: 5rem;
+}
+header nav ul.icons li p:nth-of-type(2) {
+  position: absolute;
+  top: 5px;
+  left: 4rem;
+  background-image: linear-gradient(to bottom, #7f83a5 0%, #3c506a 50%, #7f83a5 100%);
+  color: #fff;
+  border-radius: 13px;
+  border-bottom-left-radius: 0;
+  padding: 3px 13px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-size: 10px;
+  font-weight: bolder;
+}
+header nav ul.icons li.line::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #222;
+}
+header nav ul.help {
+  display: none;
+}
+@media all and (min-width: 768px) {
+  header nav ul.help {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+@media all and (min-width: 768px) {
+  header nav ul.help li:first-child {
+    display: none;
+  }
+}
+@media all and (min-width: 1200px) {
+  header nav ul.help li:first-child {
+    display: block;
+  }
+}
+header nav ul.help li:not(:first-child) {
+  background-color: #888;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+header nav ul.help li:not(:first-child) img {
+  width: 1rem;
+}
+header nav div.big-search {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
