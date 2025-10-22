@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+@use "scss/variables" as *;
+@use "scss/mixin2" as mixin;
+// 헤더 영역 모바일검색란
+header {
+  padding: 1rem;
+  div.mobile-search {
+    @include mixin.flex-layout();
+        @include mixin.tablet{
+      display: none;}
+    box-shadow: $base-shadow;
+    border-radius: 2rem;
+    padding: 10px;
+    img {
+      width: 1rem;
+    }
+    margin-bottom: 1rem;
+  }
+  nav {
+    width: 80%;
+    margin: 0 auto;
+    @include mixin.flex-layout($justify:space-between);
+    h1 {
+      display: none;
+      @include mixin.tablet {
+        display: block;
+      }
+    }
+    ul.icon {
+      width: 100%;
+      @include mixin.flex-layout($justify: space-between);
+      @include mixin.tablet{width: auto;}
+      li {
+        position: relative;
+        @include mixin.flex-layout($direction: column, $gap: 0px);
+        img {
+          width: 5rem;
+        }
+        p {
+          &:nth-of-type(2) {
+            position: absolute;
+            top: 0;
+            left: 4rem;
+            background-image: linear-gradient(
+              to bottom,
+              #7f83a5 0%,
+              #3c506a 50%,
+              #7f83a5 100%
+            );
+            border-radius: 10px;
+            border-bottom-left-radius: 0px;
+            color: $bg-color;
+            padding: 3px 13px;
+            font-size: 10px;
+            font-weight: bolder;
+          }
+        }
+      }
+    }
+    ul.help {
+      display: none;
+      @include mixin.tablet {
+        @include mixin.flex-layout();
+      }
+      li:first-child{
+          @include mixin.tablet{display: none;}
+        }
+        li:not(:first-child){
+          background-color: $font-sub;
+          padding: 10px;
+          border-radius: 50%;
+          img {width: 1rem;}
+        }
+      }
+    }
+  }

@@ -1,15 +1,9 @@
 header {
   height: 70vh;
   background-image: url(./image/imgi02.png);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
 }
 header nav {
@@ -18,15 +12,9 @@ header nav {
   width: 100%;
   top: 0;
   left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   gap: 2rem;
 }
 header nav h1 {
@@ -35,14 +23,9 @@ header nav h1 {
   color: #fff;
 }
 header nav .gnb {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-around;
+  align-items: center;
   gap: 2rem;
 }
 header nav .gnb a {
@@ -74,6 +57,5 @@ header div.title button {
   cursor: pointer;
 }
 header div.title button:hover {
-  -webkit-filter: brightness(1.3);
-          filter: brightness(1.3);
+  filter: brightness(1.3);
 }/*# sourceMappingURL=style.css.map */
