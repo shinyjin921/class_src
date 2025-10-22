@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+@use "./scss/variable" as *;
+@use "./scss/mixin" as mixin;
+
+header {
+  height: 70vh;
+  background-image: url(./image/imgi02.png);
+  @include mixin.row-layout(center);
+  nav {
+    background-color: rgba(255,255,255,0.7);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    h1 {
+      background-color: $main-color;
+      padding: $base-padding;
+      color: #fff;
+    }
+    @include mixin.row-layout(space-between);
+    .gnb {
+      @include mixin.row-layout(space-around);
+      a {
+        display: block;
+        padding: $base-padding;
+        &:hover {
+          background-color: $main-color;
+        }
+      }
+    }
+  }
+  div.title{
+    background-color: $box-color;
+    padding: $base-padding;
+    border-radius: 0.5rem;
+    color: #fff;
+    text-align: center;
+    h2{
+      font-size: 6rem;
+      letter-spacing: 1rem;
+    }
+    button{
+      @include mixin.pink-btn($btn-color);
+    }
+  }
+}

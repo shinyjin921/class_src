@@ -5,8 +5,7 @@ body{
 }
 /* 임시저장 */
 input{
-  position: fixed;
-  z-index: 100;
+  display: none;
 }
 input[id=menu-check]:checked ~ nav{
   transform: rotateY(15deg);

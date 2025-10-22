@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반응형</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    ul{list-style: none;}
+    ul{display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #ddd;
+    width: 80%;
+    margin: 1rem auto;
+  }
+    body{
+    background-color: #222;
+  }
+  div{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    background-color: #ccc;
+    width: 80%;
+    margin: 2rem auto;
+  }
+  div > p{
+    background-color: dodgerblue;
+  }
+  @media all and (min-width:321px){
+    body{
+      background-color: yellow;
+    }
+    div{
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
+  @media all and (min-width:768px) {
+    h1{display: none;}
+    ul{flex-direction: row;}
+    div{grid-template-columns: repeat(3,1fr);}
+  }
+  /* 1024px이상일 경우에는 grid를 4줄로 보이게 */
+  @media all and (min-width:1024px) {
+    div{grid-template-columns: repeat(4,1fr);}
+  }
+    
+    ul>li{background-color: tomato;
+    padding: 0.5rem 1rem;}
+  </style>
+</head>
+<body>
+  <h1>타이틀</h1>
+  <ul>
+    <li>menu-1</li>
+    <li>menu-2</li>
+    <li>menu-3</li>
+    <li>menu-4</li>
+  </ul>
+  <div>
+    <p>box1</p>
+    <p>box2</p>
+    <p>box3</p>
+    <p>box4</p>
+    <p>box5</p>
+    <p>box6</p>
+    <p>box7</p>
+    <p>box8</p>
+  </div>
+  <picture>
+    <source srcset="../assets/images/imgi03.png" media="(min-width:1024px)">
+    <source srcset="../assets/images/imgi02.png" media="(max-width:768px)">
+    <source srcset="../assets/images/imgi01.png" media="(max-width:320px)">
+    <img src="../assets/images/imgi01.png" alt="음료이미지">
+
+  </picture>
+</body>
+</html>

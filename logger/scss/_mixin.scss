@@ -1,0 +1,19 @@
+@mixin row-layout($just){
+  display: flex;
+  justify-content: $just;
+  align-items: center;
+  gap: 2rem;
+}
+@mixin pink-btn ($color) {
+  display: block;
+  margin: 0.5rem auto;
+  background-color: $color;
+  color:#fff;
+  border:1px solid #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  &:hover{
+    filter: brightness(1.3);
+  }
+}

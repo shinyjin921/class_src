@@ -60,8 +60,15 @@
       <p></p>
       <p>Clothes</p>
       <p></p>
-
     </section>
   </main>
+  <script>
+    const elem = document.querySelectorAll('nav>ul>li>label')
+    elem.forEach((label)=>{
+      label.addEventListener("click",()=>{
+        document.getElementById("menu-check").checked=false;
+      });
+    });
+  </script>
 </body>
 </html>

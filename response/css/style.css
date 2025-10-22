@@ -1,0 +1,293 @@
+@charset "utf-8";
+
+:root {
+  --main-color: #3f51b5;
+}
+html{
+  scroll-behavior: smooth;
+}
+body {
+  color: var(--main-color);
+}
+/* header 영역 시작 */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  /* position: relative; */
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
+  z-index: 10;
+}
+nav > .menu-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+}
+nav > .menu-icon > span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--main-color);
+  position: absolute;
+  left: 0;
+  transition: 0.3s;
+}
+nav > .menu-icon > span:nth-child(1) {
+  top: 0;
+}
+nav > .menu-icon > span:nth-child(2) {
+  top: calc(50% - 1px);
+}
+nav > .menu-icon > span:nth-child(3) {
+  top: calc(100% - 2px);
+}
+/* header 영역 끝 */
+/* checkbox가 체크가 되면 span 로테이션 */
+input[id="trigger"]:checked + .menu-icon > span:nth-child(1) {
+  top: calc(50% - 1px);
+  transform: rotate(45deg);
+}
+input[id="trigger"]:checked + .menu-icon > span:nth-child(2) {
+  opacity: 0;
+}
+input[id="trigger"]:checked + .menu-icon > span:nth-child(3) {
+  top: calc(50% - 1px);
+  transform: rotate(-45deg);
+}
+/* gnb */
+input[id="trigger"]:checked ~ .gnb {
+  height: auto;
+}
+input[id="trigger"]:checked ~ .gnb > li {
+  opacity: 1;
+}
+.gnb {
+  /* display: none; */
+  height: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--main-color);
+  color: #fff;
+  width: 100%;
+  transition: 1s;
+}
+.gnb > li {
+  opacity: 0;
+  padding: 0.5rem 1rem;
+  border-bottom: #c1c4d2;
+}
+input[id="trigger"] {
+  display: none;
+}
+/* 배너이미지 */
+.banner > img {
+  width: 100%;
+  height: auto;
+}
+#WORK {
+  padding: 0;
+}
+#WORK > ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 2rem;
+}
+#WORK > ul > li {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+#WORK > ul > li > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#WORK > ul > li > img {
+  width: 100%;
+}
+#WORK > ul > li > p {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(63, 81, 181, 0.7);
+  color: #fff;
+  padding: 1rem;
+  text-align: left;
+  opacity: 0;
+  transition: 0.3s;
+}
+#WORK > ul > li > p:hover {
+  opacity: 1;
+}
+#blog {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+#blog > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+#blog > ul > li > img {
+  width: 100%;
+}
+#blog > ul > li > div {
+  margin: 0.5rem 0;
+  color: #333;
+  line-height: 1.6;
+}
+#blog > ul > li > div > p:nth-child(1) {
+  text-align: left;
+  color: #666;
+  font-size: 0.7rem;
+}
+#blog > ul > li > div > p:nth-child(2) {
+  text-align: left;
+  color: #666;
+  font-size: 0.7rem;
+}
+#contact{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+#contact input, #contact textarea {
+  display: block;
+  width: 100%;
+  padding: 0.7rem 0;
+  margin: 1rem 0;
+  border: none;
+  border-bottom: 1px solid #333;
+}
+#contact input::placeholder,
+#contact textarea::placeholder
+{color: var(--main-color);}
+#contact button{
+  background-color: var(--main-color);
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 0.7rem;
+  float: right;
+}
+#contact button::after{
+  content: '';
+  clear: both;
+}
+#contact .contact-wrap{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#footer{
+  font-size: 1.5rem;
+  text-align: center;
+}
+#footer > p{
+  padding: 1rem 0;
+}
+/* 반응형 미디어 쿼리 */
+@media screen and (min-width: 768px) {
+  nav > .menu-icon {
+    display: none;
+  }
+  .gnb {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-right: 2rem;
+    position: static;
+    background: none;
+    color: var(--main-color);
+  }
+  .gnb > li {
+    opacity: 1;
+  }
+  section {
+    padding: 2rem;
+  }
+  section > h2 {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  section#WE > h2 {
+    /* flex: 1; */
+    width: 200px;
+    text-align: left;
+  }
+  section#WE > p {
+    flex: 1;
+  }
+  section p {
+    text-align: center;
+  }
+  section#WE {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 80%;
+    margin: 0 auto;
+  }
+  #promotion > ul {
+    flex-direction: column;
+  }
+  #WORK > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #blog > ul {
+    flex-direction: row;
+  }
+  #contact .contact-wrap{
+    flex-direction: row;
+  }
+  #contact .contact-wrap >*{
+    flex: 1;
+}
+}
+@media screen and (min-width: 1024px) {
+  section#WE {
+    flex-direction: row;
+    align-items: center;
+  }
+  section#WE > p {
+    text-align: left;
+    border-left: 1px solid var(--main-color);
+    padding-left: 2rem;
+  }
+  #promotion {
+    width: 80%;
+    margin: 0 auto;
+  }
+  #promotion > ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  #promotion > ul > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+  }
+  #blog {
+    width: 80%;
+    margin: 0 auto;
+    flex-direction: row;
+  }
+  #contact{
+    width: 80%;
+    margin: 0 auto;
+    flex-direction: row;
+  }
+  #contact form{
+    flex: 1;
+  }
+}

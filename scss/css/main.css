@@ -1,0 +1,10 @@
+body {
+  background-color: #3498db;
+}
+
+.btn-wrap button:nth-child(1) {
+  display: inline-block;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  background-color: #f00;
+}/*# sourceMappingURL=main.css.map */

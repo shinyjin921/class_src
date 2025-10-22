@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+body{
+  background-color: #ddd;
+  font-family: $font-main;
+}
+button{
+  background-color: $main-color;
+  border-radius: $radius;
+}
+p{
+  background-color: $sub-color;
+  border-radius: $radius;
+  border: $stroke;
+}
+nav{
+  ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 1rem;
+    >li{
+      margin: 0;
+      a{
+        text-decoration: none;
+        &:hover{
+          filter: blur(4px);
+        }
+      }
+    }
+  }
+}
+%btn-style{
+  display: inline-block;
+  border-radius: $radius;
+  padding: 0.5rem 1rem;
+}
+
+.btn-wrap{
+  div{
+    button{
+      &:nth-child(1){
+        // @extend %btn-style;
+        // background-color: $main-colors;
+        @include btn-color($main-color)
+      }
+      &:nth-child(2){
+        @include btn-color($sub-color)
+      }
+      &:nth-child(3){
+        @include btn-color(#f00)
+      }
+    }
+  }
+}
