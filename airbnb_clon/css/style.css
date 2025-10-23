@@ -1,9 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+.jua-regular {
+  font-family: "Jua", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+  font-size: 12px;
+}
+@media all and (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media all and (min-width: 1200px) {
+  html {
+    font-size: 16px;
+  }
+}
+
 body {
   background-color: #fff;
   color: #222;
-  padding: 1rem;
 }
 
+header {
+  background-color: #eee;
+  padding: 2rem;
+}
 header div.mobile-search {
   display: flex;
   flex-direction: row;
@@ -24,7 +48,7 @@ header div.mobile-search img {
   }
 }
 header nav {
-  width: 80%;
+  width: 95%;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -38,6 +62,7 @@ header nav h1 {
 @media all and (min-width: 768px) {
   header nav h1 {
     display: block;
+    color: hsl(4, 58%, 32%);
   }
 }
 header nav ul.icons {
@@ -64,18 +89,26 @@ header nav ul.icons li {
 header nav ul.icons li img {
   width: 5rem;
 }
+header nav ul.icons li p:nth-of-type(1) {
+  padding: 0.5rem 0;
+}
 header nav ul.icons li p:nth-of-type(2) {
   position: absolute;
-  top: 5px;
-  left: 4rem;
+  top: 3px;
+  left: 3.8rem;
   background-image: linear-gradient(to bottom, #7f83a5 0%, #3c506a 50%, #7f83a5 100%);
   color: #fff;
   border-radius: 13px;
   border-bottom-left-radius: 0;
-  padding: 3px 13px;
+  padding: 3px 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   font-size: 10px;
   font-weight: bolder;
+}
+@media all and (min-width: 768px) {
+  header nav ul.icons li {
+    flex-direction: row;
+  }
 }
 header nav ul.icons li.line::after {
   content: "";
@@ -83,12 +116,14 @@ header nav ul.icons li.line::after {
   width: 100%;
   height: 3px;
   background-color: #222;
+  position: absolute;
+  bottom: 0px;
 }
-header nav ul.help {
+header ul.help {
   display: none;
 }
 @media all and (min-width: 768px) {
-  header nav ul.help {
+  header ul.help {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -97,23 +132,394 @@ header nav ul.help {
   }
 }
 @media all and (min-width: 768px) {
-  header nav ul.help li:first-child {
+  header ul.help li:first-child {
     display: none;
   }
 }
 @media all and (min-width: 1200px) {
-  header nav ul.help li:first-child {
+  header ul.help li:first-child {
     display: block;
   }
 }
-header nav ul.help li:not(:first-child) {
+header ul.help li:not(:first-child) {
   background-color: #888;
   padding: 0.5rem;
   border-radius: 50%;
 }
-header nav ul.help li:not(:first-child) img {
+header ul.help li:not(:first-child) img {
   width: 1rem;
 }
-header nav div.big-search {
+
+div.big-search {
   display: none;
+}
+@media all and (min-width: 768px) {
+  div.big-search {
+    display: block;
+  }
+}
+div.big-search ul {
+  width: 95%;
+  max-width: 1024px;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1rem;
+  color: #888;
+  border: 1px solid #888;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 3rem;
+}
+div.big-search ul li {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0.5rem 1rem 2rem;
+  transition: 0.3s;
+}
+div.big-search ul li h3 {
+  font-size: 0.8rem;
+  color: #333;
+}
+div.big-search ul li p {
+  font-size: 0.8rem;
+}
+div.big-search ul li:nth-child(1) {
+  flex: 1.5;
+}
+div.big-search ul li:nth-child(4) {
+  flex: 1.5;
+}
+div.big-search ul li:nth-child(4) .search-icon {
+  position: relative;
+  z-index: 10;
+  width: 1.5rem;
+  background-color: #ffd2d2;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+div.big-search ul li:nth-child(4) .search-icon:hover {
+  filter: brightness(0.7);
+}
+div.big-search ul li:nth-child(2), div.big-search ul li:nth-child(3) {
+  flex: 1;
+}
+div.big-search ul li:hover {
+  background-color: #ccc;
+  border-radius: 3rem;
+}
+
+main {
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+main > section {
+  overflow: hidden;
+}
+main > section .title {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+main > section .title .sub p {
+  display: inline-block;
+}
+main > section .title .sub-icons {
+  display: none;
+}
+@media all and (min-width: 768px) {
+  main > section .title .sub-icons {
+    display: block;
+  }
+}
+main > section .title .sub-icons p {
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 50%;
+  border: 1px solid #888;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  line-height: 1.3rem;
+}
+main > section ul {
+  margin: 1rem 0;
+  width: 270%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+@media all and (min-width: 768px) {
+  main > section ul {
+    width: 180%;
+  }
+}
+@media all and (min-width: 1200px) {
+  main > section ul {
+    width: 100%;
+  }
+}
+main > section ul .card {
+  flex: 1;
+}
+main > section ul .card .image {
+  background-position: center;
+  padding: 2rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  aspect-ratio: 1/1;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+main > section ul .card .image p {
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+main > section ul .card .image img {
+  width: 1.8rem;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+main > section ul .card .image img:hover {
+  transform: scale(1.1);
+}
+main > section ul .card:nth-child(1) .image {
+  background-image: url(../pet-image/hotel-01.jpg);
+}
+main > section ul .card:nth-child(2) .image {
+  background-image: url(../pet-image/hotel-04.jpg);
+}
+main > section ul .card:nth-child(3) .image {
+  background-image: url(../pet-image/hotel-03.jpg);
+}
+main > section ul .card:nth-child(4) .image {
+  background-image: url(../pet-image/hotel-02.jpg);
+}
+main > section ul .card:nth-child(5) .image {
+  background-image: url(../pet-image/hotel-05.jpg);
+}
+main > section ul .card:nth-child(6) .image {
+  background-image: url(../pet-image/hotel-06.jpg);
+}
+main > section ul .card main > section.care {
+  overflow: hidden;
+}
+main > section ul .card main > section.care .title {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+main > section ul .card main > section.care .title .sub p {
+  display: inline-block;
+}
+main > section ul .card main > section.care .title .sub-icons {
+  display: none;
+}
+@media all and (min-width: 768px) {
+  main > section ul .card main > section.care .title .sub-icons {
+    display: block;
+  }
+}
+main > section ul .card main > section.care .title .sub-icons p {
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 50%;
+  border: 1px solid #888;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  line-height: 1.3rem;
+}
+main > section ul .card main > section.care ul {
+  margin: 1rem 0;
+  width: 270%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+@media all and (min-width: 768px) {
+  main > section ul .card main > section.care ul {
+    width: 180%;
+  }
+}
+@media all and (min-width: 1200px) {
+  main > section ul .card main > section.care ul {
+    width: 100%;
+  }
+}
+main > section ul .card main > section.care ul .card {
+  flex: 1;
+}
+main > section ul .card main > section.care ul .card .image {
+  background-position: center;
+  padding: 2rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  aspect-ratio: 1/1;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+main > section ul .card main > section.care ul .card .image p {
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+main > section ul .card main > section.care ul .card .image img {
+  width: 1.8rem;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+main > section ul .card main > section.care ul .card .image img:hover {
+  transform: scale(1.1);
+}
+main > section.care ul .card:nth-child(1) .image {
+  background-image: url(../pet-image/care-01.jpg);
+}
+main > section.care ul .card:nth-child(2) .image {
+  background-image: url(../pet-image/care-05.jpg);
+}
+main > section.care ul .card:nth-child(3) .image {
+  background-image: url(../pet-image/care-03.jpg);
+}
+main > section.care ul .card:nth-child(4) .image {
+  background-image: url(../pet-image/care-04.jpg);
+}
+main > section.care ul .card:nth-child(5) .image {
+  background-image: url(../pet-image/care-02.jpg);
+}
+main > section.care ul .card:nth-child(6) .image {
+  background-image: url(../pet-image/care-06.jpg);
+}
+
+main > section.rental {
+  overflow: hidden;
+}
+main > section.rental .title {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+main > section.rental .title .sub p {
+  display: inline-block;
+}
+main > section.rental .title .sub-icons {
+  display: none;
+}
+@media all and (min-width: 768px) {
+  main > section.rental .title .sub-icons {
+    display: block;
+  }
+}
+main > section.rental .title .sub-icons p {
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 50%;
+  border: 1px solid #888;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  line-height: 1.3rem;
+}
+main > section.rental ul {
+  margin: 1rem 0;
+  width: 270%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+@media all and (min-width: 768px) {
+  main > section.rental ul {
+    width: 180%;
+  }
+}
+@media all and (min-width: 1200px) {
+  main > section.rental ul {
+    width: 100%;
+  }
+}
+main > section.rental ul .card {
+  flex: 1;
+}
+main > section.rental ul .card .image {
+  background-position: center;
+  padding: 2rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  aspect-ratio: 1/1;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+main > section.rental ul .card .image p {
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+main > section.rental ul .card .image img {
+  width: 1.8rem;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+main > section.rental ul .card .image img:hover {
+  transform: scale(1.1);
+}
+main > section.rental ul .card:nth-child(1) .image {
+  background-image: url(../pet-image/rental-01.jpg);
+}
+main > section.rental ul .card:nth-child(2) .image {
+  background-image: url(../pet-image/rental-02.jpg);
+}
+main > section.rental ul .card:nth-child(3) .image {
+  background-image: url(../pet-image/rental-03.jpg);
+}
+main > section.rental ul .card:nth-child(4) .image {
+  background-image: url(../pet-image/rental-04.jpg);
+}
+main > section.rental ul .card:nth-child(5) .image {
+  background-image: url(../pet-image/rental-05.jpg);
+}
+main > section.rental ul .card:nth-child(6) .image {
+  background-image: url(../pet-image/rental-06.jpg);
 }/*# sourceMappingURL=style.css.map */

@@ -1,15 +1,28 @@
 @charset "utf-8";
 
+@use "scss/font";
+// @forward:전체 영역에서 사용 가능
 @use "scss/variables" as *;
 @use "scss/mixin" as mixin;
 
+html {
+  font-size: 12px;
+  @include mixin.tablet {
+    font-size: 16px;
+  }
+  @include mixin.desktop {
+    font-size: 16px;
+  }
+}
 body {
   background-color: $bg-color;
   color: $font-main;
-  padding: 1rem;
+  // padding: 1rem;
 }
 // hearder 영역 시작//
 header {
+  background-color: #eee;
+  padding: 2rem;
   // 모바일 사이즈에서 서치 항목을 새로 작성//
   div.mobile-search {
     @include mixin.flex-layout();
@@ -28,9 +41,9 @@ header {
 
   // 메뉴항목
   nav {
-    width: 80%;
+    width: 95%;
     margin: 0 auto;
-    @include mixin.flex-layout($justify:space-between);
+    @include mixin.flex-layout($justify: space-between);
     // 태블릿 사이즈일 경우 로고와 헬프가 보여지게함.
     // @include mixin.flex-layout($direction: column, $justify: space-between);
     // @include mixin.tablet{
@@ -41,12 +54,15 @@ header {
       display: none;
       @include mixin.tablet {
         display: block;
+        color: $main-color;
       }
     }
     ul.icons {
       width: 100%;
       @include mixin.flex-layout($justify: space-between);
-      @include mixin.tablet{width: auto;}
+      @include mixin.tablet {
+        width: auto;
+      }
       li {
         position: relative;
         @include mixin.flex-layout($direction: column, $gap: 0);
@@ -54,10 +70,13 @@ header {
           width: 5rem;
         }
         p {
+          &:nth-of-type(1) {
+            padding: 0.5rem 0;
+          }
           &:nth-of-type(2) {
             position: absolute;
-            top: 5px;
-            left: 4rem;
+            top: 3px;
+            left: 3.8rem;
             background-image: linear-gradient(
               to bottom,
               #7f83a5 0%,
@@ -67,11 +86,14 @@ header {
             color: $bg-color;
             border-radius: 13px;
             border-bottom-left-radius: 0;
-            padding: 3px 13px;
+            padding: 3px 10px;
             box-shadow: $base-shadow;
             font-size: 10px;
             font-weight: bolder;
           }
+        }
+        @include mixin.tablet {
+          flex-direction: row;
         }
       }
       li.line {
@@ -81,34 +103,359 @@ header {
           width: 100%;
           height: 3px;
           background-color: $font-main;
+          position: absolute;
+          bottom: 0px;
         }
       }
     }
-    ul.help {
+  }
+  ul.help {
+    display: none;
+    @include mixin.tablet {
+      @include mixin.flex-layout();
+    }
+    li:first-child {
+      @include mixin.tablet {
+        display: none;
+      }
+      @include mixin.desktop {
+        display: block;
+      }
+    }
+    li:not(:first-child) {
+      background-color: $font-sub;
+      padding: 0.5rem;
+      border-radius: 50%;
+      img {
+        width: 1rem;
+      }
+    }
+  }
+}
+// 데스크탑용 서치 목록
+div.big-search {
+  display: none;
+  @include mixin.tablet {
+    display: block;
+  }
+  ul {
+    width: 95%;
+    max-width: 1024px;
+    margin: 1rem auto;
+    @include mixin.flex-layout($align: stretch);
+    color: $font-sub;
+    border: 1px solid $font-sub;
+    box-shadow: $base-shadow;
+    border-radius: 3rem;
+    li {
+      cursor: pointer;
+      @include mixin.flex-layout($justify: space-between);
+      padding: 1rem 0.5rem 1rem 2rem;
+      transition: 0.3s;
+      h3 {
+        font-size: 0.8rem;
+        color: #333;
+      }
+      p {
+        font-size: 0.8rem;
+      }
+      &:nth-child(1) {
+        flex: 1.5;
+      }
+      &:nth-child(4) {
+        flex: 1.5;
+        .search-icon {
+          position: relative;
+          z-index: 10;
+          width: 1.5rem;
+          background-color: #ffd2d2;
+          padding: 0.5rem;
+          border-radius: 50%;
+          &:hover {
+            filter: brightness(0.7);
+          }
+        }
+      }
+      &:nth-child(2),
+      &:nth-child(3) {
+        flex: 1;
+      }
+      &:hover {
+        background-color: #ccc;
+        border-radius: 3rem;
+      }
+    }
+  }
+}
+// 메인 태그 시작
+main {
+  box-sizing: border-box;
+  padding: 1rem;
+}
+main > section {
+  overflow: hidden;
+  .title { 
+    font-size: 1.5rem;
+    font-weight: bolder;
+    @include mixin.flex-layout($justify:space-between);
+    .sub {
+      p {
+        display: inline-block;
+      }
+    }
+    .sub-icons {
       display: none;
       @include mixin.tablet {
-        @include mixin.flex-layout();
+        display: block;
       }
-      li:first-child {
-        @include mixin.tablet {
-          display: none;
-        }
-        @include mixin.desktop {
-          display: block;
-        }
-      }
-      li:not(:first-child) {
-        background-color: $font-sub;
+      p {
+        display: inline-block;
         padding: 0.5rem;
         border-radius: 50%;
-        img {
-          width: 1rem;
+        border: 1px solid $font-sub;
+        width: 1.5rem;
+        height: 1.5rem;
+        text-align: center;
+        line-height: 1.3rem;
+      }
+    }
+  }
+    ul {
+      margin: 1rem 0;
+      width: 270%;
+      @include mixin.tablet{
+        width: 180%;
+      }
+      @include mixin.desktop{
+        width: 100%;
+      }
+      @include mixin.flex-layout();
+      .card {
+        flex: 1;
+        .image {
+          background-position: center;
+          padding: 2rem;
+          background-size: cover;
+          background-repeat: no-repeat;
+          aspect-ratio: 1/1;
+          border-radius: $card-radius;
+          @include mixin.flex-layout(row,space-between,flex-start);
+          p{
+            background-color: rgba(255,255,255,07);
+            padding: 5px;
+            border-radius: $card-radius;
+            cursor: pointer;
+          }
+          img {
+            width: 1.8rem;
+            border: 1px solid #fff;
+            cursor: pointer;
+            transition: 0.3s;
+            &:hover{
+              transform: scale(1.1);
+            }
+          }
+        }
+        .info {
         }
       }
     }
-    // 데스크탑용 서치 목록
-    div.big-search {
-      display: none;
+}
+main > section ul .card {
+  &:nth-child(1) .image{
+    background-image: url(../pet-image/hotel-01.jpg);
+  }
+  &:nth-child(2) .image{
+    background-image: url(../pet-image/hotel-04.jpg);
+  }
+  &:nth-child(3) .image{
+    background-image: url(../pet-image/hotel-03.jpg);
+  }
+  &:nth-child(4) .image{
+    background-image: url(../pet-image/hotel-02.jpg);
+  }
+  &:nth-child(5) .image{
+    background-image: url(../pet-image/hotel-05.jpg);
+  }
+  &:nth-child(6) .image{
+    background-image: url(../pet-image/hotel-06.jpg);
+  }
+  main > section.care {
+  overflow: hidden;
+  .title { 
+    font-size: 1.5rem;
+    font-weight: bolder;
+    @include mixin.flex-layout($justify:space-between);
+    .sub {
+      p {
+        display: inline-block;
+      }
     }
+    .sub-icons {
+      display: none;
+      @include mixin.tablet {
+        display: block;
+      }
+      p {
+        display: inline-block;
+        padding: 0.5rem;
+        border-radius: 50%;
+        border: 1px solid $font-sub;
+        width: 1.5rem;
+        height: 1.5rem;
+        text-align: center;
+        line-height: 1.3rem;
+      }
+    }
+  }
+    ul {
+      margin: 1rem 0;
+      width: 270%;
+      @include mixin.tablet{
+        width: 180%;
+      }
+      @include mixin.desktop{
+        width: 100%;
+      }
+      @include mixin.flex-layout();
+      .card {
+        flex: 1;
+        .image {
+          background-position: center;
+          padding: 2rem;
+          background-size: cover;
+          background-repeat: no-repeat;
+          aspect-ratio: 1/1;
+          border-radius: $card-radius;
+          @include mixin.flex-layout(row,space-between,flex-start);
+          p{
+            background-color: rgba(255,255,255,07);
+            padding: 5px;
+            border-radius: $card-radius;
+            cursor: pointer;
+          }
+          img {
+            width: 1.8rem;
+            border: 1px solid #fff;
+            cursor: pointer;
+            transition: 0.3s;
+            &:hover{
+              transform: scale(1.1);
+            }
+          }
+        }
+        .info {
+        }
+      }
+    }
+}
+}
+main > section.care ul .card {
+  &:nth-child(1) .image{
+    background-image: url(../pet-image/care-01.jpg);
+  }
+  &:nth-child(2) .image{
+    background-image: url(../pet-image/care-05.jpg);
+  }
+  &:nth-child(3) .image{
+    background-image: url(../pet-image/care-03.jpg);
+  }
+  &:nth-child(4) .image{
+    background-image: url(../pet-image/care-04.jpg);
+  }
+  &:nth-child(5) .image{
+    background-image: url(../pet-image/care-02.jpg);
+  }
+  &:nth-child(6) .image{
+    background-image: url(../pet-image/care-06.jpg);
+  }
+}
+  main > section.rental {
+  overflow: hidden;
+  .title { 
+    font-size: 1.5rem;
+    font-weight: bolder;
+    @include mixin.flex-layout($justify:space-between);
+    .sub {
+      p {
+        display: inline-block;
+      }
+    }
+    .sub-icons {
+      display: none;
+      @include mixin.tablet {
+        display: block;
+      }
+      p {
+        display: inline-block;
+        padding: 0.5rem;
+        border-radius: 50%;
+        border: 1px solid $font-sub;
+        width: 1.5rem;
+        height: 1.5rem;
+        text-align: center;
+        line-height: 1.3rem;
+      }
+    }
+  }
+    ul {
+      margin: 1rem 0;
+      width: 270%;
+      @include mixin.tablet{
+        width: 180%;
+      }
+      @include mixin.desktop{
+        width: 100%;
+      }
+      @include mixin.flex-layout();
+      .card {
+        flex: 1;
+        .image {
+          background-position: center;
+          padding: 2rem;
+          background-size: cover;
+          background-repeat: no-repeat;
+          aspect-ratio: 1/1;
+          border-radius: $card-radius;
+          @include mixin.flex-layout(row,space-between,flex-start);
+          p{
+            background-color: rgba(255,255,255,07);
+            padding: 5px;
+            border-radius: $card-radius;
+            cursor: pointer;
+          }
+          img {
+            width: 1.8rem;
+            border: 1px solid #fff;
+            cursor: pointer;
+            transition: 0.3s;
+            &:hover{
+              transform: scale(1.1);
+            }
+          }
+        }
+        .info {
+        }
+      }
+    }
+}
+main > section.rental ul .card {
+  &:nth-child(1) .image{
+    background-image: url(../pet-image/rental-01.jpg);
+  }
+  &:nth-child(2) .image{
+    background-image: url(../pet-image/rental-02.jpg);
+  }
+  &:nth-child(3) .image{
+    background-image: url(../pet-image/rental-03.jpg);
+  }
+  &:nth-child(4) .image{
+    background-image: url(../pet-image/rental-04.jpg);
+  }
+  &:nth-child(5) .image{
+    background-image: url(../pet-image/rental-05.jpg);
+  }
+  &:nth-child(6) .image{
+    background-image: url(../pet-image/rental-06.jpg);
   }
 }
