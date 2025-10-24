@@ -1,0 +1,7 @@
+@mixin flex-layout ($justify:center,$align:center,$diraction:row,$gap:1rem) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $diraction;
+  gap:$gap;
+}

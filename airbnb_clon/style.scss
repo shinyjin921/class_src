@@ -50,12 +50,20 @@ header {
     //   flex-direction: row;
     // }
     // 태블릿 사이즈에서 확인가능
+    .logo{
+      @include mixin.flex-layout();
     h1 {
       display: none;
       @include mixin.tablet {
         display: block;
         color: $main-color;
       }
+    }
+    img{display: none;
+    @include mixin.tablet{
+      width: 5rem;
+      display: block;
+    }}
     }
     ul.icons {
       width: 100%;
@@ -123,7 +131,7 @@ header {
       }
     }
     li:not(:first-child) {
-      background-color: $font-sub;
+      background-color: $main-color;
       padding: 0.5rem;
       border-radius: 50%;
       img {
@@ -168,7 +176,7 @@ div.big-search {
           position: relative;
           z-index: 10;
           width: 1.5rem;
-          background-color: #ffd2d2;
+          background-color: $main-color;
           padding: 0.5rem;
           border-radius: 50%;
           &:hover {
@@ -231,6 +239,7 @@ main > section {
       }
       @include mixin.flex-layout();
       .card {
+        cursor: pointer;
         flex: 1;
         .image {
           background-position: center;
@@ -240,6 +249,7 @@ main > section {
           aspect-ratio: 1/1;
           border-radius: $card-radius;
           @include mixin.flex-layout(row,space-between,flex-start);
+          }
           p{
             background-color: rgba(255,255,255,07);
             padding: 5px;
@@ -247,20 +257,15 @@ main > section {
             cursor: pointer;
           }
           img {
-            width: 1.8rem;
+            opacity: 0.8;
+            width: 1.5rem;
             border: 1px solid #fff;
             cursor: pointer;
             transition: 0.3s;
-            &:hover{
-              transform: scale(1.1);
             }
-          }
-        }
-        .info {
         }
       }
     }
-}
 main > section ul .card {
   &:nth-child(1) .image{
     background-image: url(../pet-image/hotel-01.jpg);
@@ -343,8 +348,6 @@ main > section ul .card {
               transform: scale(1.1);
             }
           }
-        }
-        .info {
         }
       }
     }
@@ -434,8 +437,6 @@ main > section.care ul .card {
             }
           }
         }
-        .info {
-        }
       }
     }
 }
@@ -458,4 +459,58 @@ main > section.rental ul .card {
   &:nth-child(6) .image{
     background-image: url(../pet-image/rental-06.jpg);
   }
+}
+// 푸터 영역
+footer{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1.5rem 1rem;
+  background-color: $main-color;
+  hr{
+    // border: 0.5px solid #fff;
+    outline: none;
+    height: 1px;
+    background-color: #fff;
+    border: none;
+  }
+  // border: 1px solid $font-sub;
+  div.footer-top{
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    @include mixin.flex-layout($direction:column,$justify:flex-start,$align:flex-start);
+    @include mixin.tablet{
+      @include mixin.flex-layout($justify:space-between);
+    }
+    ul.footer-info{
+      display: inline-block;
+      @include mixin.tablet{
+        @include mixin.flex-layout();
+      }
+      li{
+        color: $bg-color;
+        &:hover{
+          transform: scale(1.1);
+          font-weight: bolder
+        }
+      }
+    }
+    ul.footer-icon{
+      @include mixin.flex-layout();
+      li{
+        img{
+          width: 1.5rem;}
+      }
+    }
+  }
+    div.footer-bottom{
+      ul{
+        li{
+          display: inline-block;
+          p{
+            font-size: 10px;
+            color: $bg-color;
+          }
+        }
+      }
+    }
 }

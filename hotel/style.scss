@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+@use "scss/mixin" as mixin;
+@use "scss/variables" as *;
+
+header {
+  div.bg {
+    width: 100vw;
+    background-image: url();
+    img {
+      width: 100%;
+    }
+    nav{
+      width: 100%;
+    ul.language {
+      li {
+        font-weight: bold;
+        @include mixin.flex-layout($justify:flex-end,$gap: 0.5rem);
+      }
+    }
+    ul.logo-menu{
+      width: 100%;
+      @include mixin.flex-layout($justify:space-between,$gap:0);
+      li.logo{
+        @include mixin.flex-layout($gap:0.2rem);
+        img{
+          width: 2rem;
+        }
+      }
+    }
+  }
+  }
+}

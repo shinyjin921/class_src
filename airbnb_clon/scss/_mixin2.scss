@@ -1,9 +1,0 @@
-// 혼자 연습용
-
-@mixin flex-layout($justify:center,$align:center,$direction:row,$gap:10px){
-  display:flex;
-  justify-content: $justify;
-  align-items: $align;
-  flex-direction: $direction;
-  gap:$gap
-}

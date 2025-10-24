@@ -56,13 +56,29 @@ header nav {
   align-items: center;
   gap: 1rem;
 }
-header nav h1 {
+header nav .logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+header nav .logo h1 {
   display: none;
 }
 @media all and (min-width: 768px) {
-  header nav h1 {
+  header nav .logo h1 {
     display: block;
-    color: hsl(4, 58%, 32%);
+    color: #c19867;
+  }
+}
+header nav .logo img {
+  display: none;
+}
+@media all and (min-width: 768px) {
+  header nav .logo img {
+    width: 5rem;
+    display: block;
   }
 }
 header nav ul.icons {
@@ -142,7 +158,7 @@ header ul.help {
   }
 }
 header ul.help li:not(:first-child) {
-  background-color: #888;
+  background-color: #c19867;
   padding: 0.5rem;
   border-radius: 50%;
 }
@@ -199,7 +215,7 @@ div.big-search ul li:nth-child(4) .search-icon {
   position: relative;
   z-index: 10;
   width: 1.5rem;
-  background-color: #ffd2d2;
+  background-color: #c19867;
   padding: 0.5rem;
   border-radius: 50%;
 }
@@ -272,6 +288,7 @@ main > section ul {
   }
 }
 main > section ul .card {
+  cursor: pointer;
   flex: 1;
 }
 main > section ul .card .image {
@@ -287,21 +304,20 @@ main > section ul .card .image {
   align-items: flex-start;
   gap: 1rem;
 }
-main > section ul .card .image p {
+main > section ul .card p {
   background-color: rgb(255, 255, 255);
   padding: 5px;
   border-radius: 2rem;
   cursor: pointer;
 }
-main > section ul .card .image img {
-  width: 1.8rem;
+main > section ul .card img {
+  opacity: 0.8;
+  width: 1.5rem;
   border: 1px solid #fff;
   cursor: pointer;
   transition: 0.3s;
 }
-main > section ul .card .image img:hover {
-  transform: scale(1.1);
-}
+
 main > section ul .card:nth-child(1) .image {
   background-image: url(../pet-image/hotel-01.jpg);
 }
@@ -403,6 +419,7 @@ main > section ul .card main > section.care ul .card .image img {
 main > section ul .card main > section.care ul .card .image img:hover {
   transform: scale(1.1);
 }
+
 main > section.care ul .card:nth-child(1) .image {
   background-image: url(../pet-image/care-01.jpg);
 }
@@ -505,6 +522,7 @@ main > section.rental ul .card .image img {
 main > section.rental ul .card .image img:hover {
   transform: scale(1.1);
 }
+
 main > section.rental ul .card:nth-child(1) .image {
   background-image: url(../pet-image/rental-01.jpg);
 }
@@ -522,4 +540,71 @@ main > section.rental ul .card:nth-child(5) .image {
 }
 main > section.rental ul .card:nth-child(6) .image {
   background-image: url(../pet-image/rental-06.jpg);
+}
+
+footer {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1.5rem 1rem;
+  background-color: #c19867;
+}
+footer hr {
+  outline: none;
+  height: 1px;
+  background-color: #fff;
+  border: none;
+}
+footer div.footer-top {
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+@media all and (min-width: 768px) {
+  footer div.footer-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+footer div.footer-top ul.footer-info {
+  display: inline-block;
+}
+@media all and (min-width: 768px) {
+  footer div.footer-top ul.footer-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+footer div.footer-top ul.footer-info li {
+  color: #fff;
+}
+footer div.footer-top ul.footer-info li:hover {
+  transform: scale(1.1);
+  font-weight: bolder;
+}
+footer div.footer-top ul.footer-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+footer div.footer-top ul.footer-icon li img {
+  width: 1.5rem;
+}
+footer div.footer-bottom ul li {
+  display: inline-block;
+}
+footer div.footer-bottom ul li p {
+  font-size: 10px;
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */
