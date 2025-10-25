@@ -6,28 +6,71 @@
 header {
   div.bg {
     width: 100vw;
-    background-image: url(./hotel-image/header-hotel.jpg);
-    img {
+    height: 100vh;
+    background-image: url(../hotel-image/header-hotel.jpg);
+    background-size: cover;
+    background-position: center;
+    img.bg-image {
       width: 100%;
     }
-    nav{
+    nav {
+      color: $font-sub;
+      box-sizing: border-box;
+      padding: 1rem;
       width: 100%;
-    ul.language {
-      li {
-        font-weight: bold;
-        @include mixin.flex-layout($justify:flex-end,$gap: 0.5rem);
+      // height: 100%;
+      ul.language {
+        li {
+          @include mixin.flex-layout($justify: flex-end, $gap: 0.5rem);
+        }
+      }
+      ul.logo-menu {
+        width: 100%;
+        @include mixin.flex-layout($justify: space-between, $gap: 0);
+        li.logo {
+          @include mixin.flex-layout($gap: 0.2rem);
+          img {
+            width: 2rem;
+          }
+        }
+        li.menu {
+          @include mixin.flex-layout($gap: 0);
+          img {
+            width: 1.5rem;
+          }
+        }
       }
     }
-    ul.logo-menu{
-      width: 100%;
-      @include mixin.flex-layout($justify:space-between,$gap:0);
-      li.logo{
-        @include mixin.flex-layout($gap:0.2rem);
-        img{
-          width: 2rem;
+    div.banya{
+        height: 60%;
+        @include mixin.flex-layout($align:center);
+      div{
+        color: $font-sub;
+          text-align: center;
+          margin-bottom: 2rem;
+          text-shadow:0px 0px 5px rgba(124, 124, 124, 0.8);
+      }
+    }
+    div.day-box{
+      padding: 2rem;
+      box-sizing: border-box;
+      background-color: rgba(62, 62, 62, 0.5);
+      ul{
+        @include mixin.flex-layout($gap:2rem);
+        li{
+          color: $font-sub;
+          p{
+            &:nth-of-type(1){
+              font-weight: bold;
+            }
+          }
+          img{width: 2rem;}
         }
       }
     }
   }
-  }
+}
+main {
+  height: 100vh;
+  background-color: aqua;
 }
