@@ -4,14 +4,15 @@ header div.bg {
   background-image: url(../hotel-image/header-hotel.jpg);
   background-size: cover;
   background-position: center;
+  overflow-x: hidden;
 }
 header div.bg img.bg-image {
   width: 100%;
 }
 header div.bg nav {
+  padding: 1rem;
   color: #fff;
   box-sizing: border-box;
-  padding: 1rem;
   width: 100%;
 }
 header div.bg nav ul.language li {
@@ -63,29 +64,127 @@ header div.bg div.banya div {
   margin-bottom: 2rem;
   text-shadow: 0px 0px 5px rgba(124, 124, 124, 0.8);
 }
-header div.bg div.day-box {
-  padding: 2rem;
-  box-sizing: border-box;
+@media all and (min-width: 1024px) {
+  header div.bg div.banya div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+@media all and (min-width: 1024px) {
+  header div.bg div.banya {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row;
+    gap: 0;
+    font-size: 1.5rem;
+  }
+}
+header div.bg div.menubox {
+  width: 100vw;
+}
+@media all and (min-width: 1024px) {
+  header div.bg div.menubox {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 3rem;
+    cursor: pointer;
+    background-color: rgba(62, 62, 62, 0.5);
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+  }
+}
+header div.bg div.menubox div.day-box {
+  width: 100%;
   background-color: rgba(62, 62, 62, 0.5);
 }
-header div.bg div.day-box ul {
+@media all and (min-width: 1024px) {
+  header div.bg div.menubox div.day-box {
+    background-color: unset;
+    width: auto;
+  }
+}
+header div.bg div.menubox div.day-box ul {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   gap: 2rem;
 }
-header div.bg div.day-box ul li {
+@media all and (min-width: 1024px) {
+  header div.bg div.menubox div.day-box ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
+header div.bg div.menubox div.day-box ul li {
   color: #fff;
 }
-header div.bg div.day-box ul li p:nth-of-type(1) {
+header div.bg div.menubox div.day-box ul li p:nth-of-type(1) {
   font-weight: bold;
 }
-header div.bg div.day-box ul li img {
+header div.bg div.menubox div.day-box ul li img {
   width: 2rem;
 }
+@media all and (min-width: 1024px) {
+  header div.bg div.menubox div.day-box ul li img {
+    width: 4vw;
+  }
+}
+header div.bg div.menubox div.headcount {
+  display: none;
+  color: #fff;
+}
+@media all and (min-width: 1024px) {
+  header div.bg div.menubox div.headcount {
+    display: block;
+  }
+}
+header div.bg div.menubox div.headcount ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 3rem;
+}
+header div.bg div.menubox div.headcount ul li img {
+  width: 4vw;
+}
+header div.bg div.menubox div.headcount ul li button {
+  background-color: #C8B89F;
+  padding: 2rem;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: bolder;
+  cursor: pointer;
+}
+header div.bg div.menubox div.headcount ul li button:hover {
+  color: #C8B89F;
+  background-color: #F7F4F1;
+  transition: 0.5s;
+}
 
-main {
-  height: 100vh;
-  background-color: aqua;
+main h2 {
+  text-align: center;
+}
+main ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+main ul li {
+  text-align: center;
+  flex: 1 1 30%;
 }/*# sourceMappingURL=style.css.map */

@@ -5,3 +5,9 @@
   flex-direction: $diraction;
   gap:$gap;
 }
+
+@mixin desktop{
+  @media all and (min-width:1024px) {
+    @content;
+  }
+}

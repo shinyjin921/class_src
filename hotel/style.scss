@@ -10,13 +10,14 @@ header {
     background-image: url(../hotel-image/header-hotel.jpg);
     background-size: cover;
     background-position: center;
+    overflow-x: hidden;
     img.bg-image {
       width: 100%;
     }
     nav {
+      padding: 1rem;
       color: $font-sub;
       box-sizing: border-box;
-      padding: 1rem;
       width: 100%;
       // height: 100%;
       ul.language {
@@ -41,6 +42,7 @@ header {
         }
       }
     }
+    // 가운데 호텔 문구
     div.banya{
         height: 60%;
         @include mixin.flex-layout($align:center);
@@ -49,14 +51,38 @@ header {
           text-align: center;
           margin-bottom: 2rem;
           text-shadow:0px 0px 5px rgba(124, 124, 124, 0.8);
+          @include mixin.desktop{
+            @include mixin.flex-layout();
+          }
+      }
+      @include mixin.desktop{
+        @include mixin.flex-layout($align:flex-end,$gap:0);
+        font-size: 1.5rem;
       }
     }
+    // 예약 메뉴박스
+    div.menubox{
+      width: 100vw;
+      @include mixin.desktop{
+        font-size: 2rem;
+        @include mixin.flex-layout($gap:3rem);
+        cursor: pointer;
+        background-color: rgba(62, 62, 62, 0.5);
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+      }
     div.day-box{
-      padding: 2rem;
-      box-sizing: border-box;
+      width: 100%;
       background-color: rgba(62, 62, 62, 0.5);
+      @include mixin.desktop{
+        background-color: unset;
+        width: auto;
+      }
       ul{
         @include mixin.flex-layout($gap:2rem);
+        @include mixin.desktop{
+          @include mixin.flex-layout($gap:3rem);
+        }
         li{
           color: $font-sub;
           p{
@@ -64,13 +90,52 @@ header {
               font-weight: bold;
             }
           }
-          img{width: 2rem;}
+          img{width: 2rem;
+          @include mixin.desktop{width: 4vw;}}
+        }
+      }
+    }
+    div.headcount{
+      display: none;
+      color: $font-sub;
+      @include mixin.desktop{
+        display: block;
+      }
+        ul{
+          @include mixin.flex-layout($gap:3rem);
+          li{
+            img{width: 4vw;}
+            button{
+              background-color:$btn-color;
+              padding: 2rem;
+              font-size: 1rem;
+              color: $font-sub;
+              font-weight: bolder;
+              cursor: pointer;
+              &:hover{
+                color: $btn-color;
+                background-color: $btn-hover;
+                transition: 0.5s;
+              }
+            }
+          }
         }
       }
     }
   }
 }
-main {
-  height: 100vh;
-  background-color: aqua;
+// 메인영역 시작
+main{
+  h2{
+    text-align: center;
+  }
+  ul{
+    @include mixin.flex-layout();
+    flex-wrap: wrap;
+    li{
+      text-align: center;
+      flex: 1 1 30%;
+    }
+  }
 }
+
