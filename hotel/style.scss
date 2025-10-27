@@ -2,10 +2,9 @@
 
 @use "scss/mixin" as mixin;
 @use "scss/variables" as *;
-
 header {
   div.bg {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-image: url(../hotel-image/header-hotel.jpg);
     background-size: cover;
@@ -33,86 +32,116 @@ header {
           img {
             width: 2rem;
           }
+          p {
+            @include mixin.desktop {
+              font-size: 1.5rem;
+            }
+          }
         }
         li.menu {
           @include mixin.flex-layout($gap: 0);
+          @include mixin.desktop {
+            display: none;
+          }
           img {
             width: 1.5rem;
+          }
+        }
+        li.desk-menu {
+          display: none;
+          @include mixin.desktop {
+            @include mixin.flex-layout($gap: 4rem);
+            font-size: 1.5rem;
+            margin: auto;
+            cursor: pointer;
+            p {
+              &:hover {
+                box-sizing: border-box;
+                padding: 0.5rem;
+                font-weight: bolder;
+              }
+            }
           }
         }
       }
     }
     // 가운데 호텔 문구
-    div.banya{
-        height: 60%;
-        @include mixin.flex-layout($align:center);
-      div{
+    div.banya {
+      height: 60%;
+      @include mixin.flex-layout($align: center);
+      div {
         color: $font-sub;
-          text-align: center;
-          margin-bottom: 2rem;
-          text-shadow:0px 0px 5px rgba(124, 124, 124, 0.8);
-          @include mixin.desktop{
-            @include mixin.flex-layout();
-          }
+        text-align: center;
+        margin-bottom: 2rem;
+        text-shadow: 0px 0px 5px rgba(124, 124, 124, 0.8);
+        @include mixin.desktop {
+          @include mixin.flex-layout();
+        }
       }
-      @include mixin.desktop{
-        @include mixin.flex-layout($align:flex-end,$gap:0);
+      @include mixin.desktop {
+        @include mixin.flex-layout($align: flex-end, $gap: 0);
         font-size: 1.5rem;
       }
     }
     // 예약 메뉴박스
-    div.menubox{
+    div.menubox {
       width: 100vw;
-      @include mixin.desktop{
-        font-size: 2rem;
-        @include mixin.flex-layout($gap:3rem);
+      @include mixin.desktop {
+        font-size: 1.5rem;
+        @include mixin.flex-layout($gap: 3rem);
         cursor: pointer;
         background-color: rgba(62, 62, 62, 0.5);
         border-top: 1px solid #fff;
         border-bottom: 1px solid #fff;
       }
-    div.day-box{
-      width: 100%;
-      background-color: rgba(62, 62, 62, 0.5);
-      @include mixin.desktop{
-        background-color: unset;
-        width: auto;
-      }
-      ul{
-        @include mixin.flex-layout($gap:2rem);
-        @include mixin.desktop{
-          @include mixin.flex-layout($gap:3rem);
+      div.day-box {
+        width: 100%;
+        background-color: rgba(62, 62, 62, 0.5);
+        @include mixin.desktop {
+          background-color: unset;
+          width: auto;
         }
-        li{
-          color: $font-sub;
-          p{
-            &:nth-of-type(1){
-              font-weight: bold;
+        ul {
+          @include mixin.flex-layout($gap: 2rem);
+          @include mixin.desktop {
+            @include mixin.flex-layout($gap: 3rem);
+          }
+          li {
+            color: $font-sub;
+            p {
+              &:nth-of-type(1) {
+                // font-weight: bold;
+              }
+            }
+            img {
+              width: 2rem;
+              @include mixin.desktop {
+                width: 3vw;
+              }
             }
           }
-          img{width: 2rem;
-          @include mixin.desktop{width: 4vw;}}
         }
       }
-    }
-    div.headcount{
-      display: none;
-      color: $font-sub;
-      @include mixin.desktop{
-        display: block;
-      }
-        ul{
-          @include mixin.flex-layout($gap:3rem);
-          li{
-            img{width: 4vw;}
-            button{
-              background-color:$btn-color;
+      div.headcount {
+        display: none;
+        color: $font-sub;
+        @include mixin.desktop {
+          display: block;
+        }
+        ul {
+          @include mixin.flex-layout($gap: 3rem);
+          li {
+            img {
+              width: 4vw;
+            }
+            button {
+              background-color: $btn-color;
               padding: 2rem;
               font-size: 1rem;
               color: $font-sub;
               font-weight: bolder;
               cursor: pointer;
-              &:hover{
+              &:hover {
                 color: $btn-color;
                 background-color: $btn-hover;
                 transition: 0.5s;
@@ -125,17 +154,128 @@ header {
   }
 }
 // 메인영역 시작
-main{
-  h2{
-    text-align: center;
-  }
-  ul{
-    @include mixin.flex-layout();
-    flex-wrap: wrap;
-    li{
+main {
+  section.special-offers {
+    width: 100%;
+    h2 {
       text-align: center;
-      flex: 1 1 30%;
+      margin: 1rem 0;
+      color: $main-color;
+    }
+    div {
+      img {
+        width: 1.5rem;
+      }
+    }
+    ul.spacial-menu {
+      cursor: pointer;
+      @include mixin.flex-layout($gap: 0);
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+      @include mixin.desktop {
+        flex-wrap: nowrap;
+      }
+      li {
+        padding: 0.5rem;
+        text-align: center;
+        flex: 1 1 30%;
+        font-size: 1.2rem;
+        @include mixin.desktop {
+          &:hover {
+            color: $font-sub;
+            background-color: $btn-color;
+            transform: scale(1.1);
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    ul.packge {
+      width: 90%;
+      margin: 0 auto;
+      display: none;
+      @include mixin.desktop {
+        @include mixin.flex-layout($justify: space-between);
+      }
+      li {
+        @include mixin.flex-layout($gap: 0);
+        //   &:nth-of-type(2){
+        //     @include mixin.flex-layout($justify:flex-end);
+        p {
+          &:nth-child(1) {
+            color: $main-color;
+            text-align: left;
+            cursor: pointer;
+          }
+        }
+        img {
+          width: 1rem;
+        }
+      }
+    }
+  }
+  // 패키지 메뉴들
+  ul.offers {
+    position: relative;
+    margin: 1rem 0;
+    padding: 0 2rem;
+    @include mixin.desktop {
+      @include mixin.flex-layout();
+    }
+    div.left {
+      position: absolute;
+      left: 4rem;
+    }
+    div.right {
+      position: absolute;
+      right: 4rem;
+    }
+    ul.info {
+      height: 300px;
+      cursor: pointer;
+      @include mixin.flex-layout($diraction: column, $gap: 0);
+      li {
+        text-align: left;
+        width: 300px;
+        img {
+          width: 300px;
+          height: 185px;
+        }
+        p {
+          display: block;
+          text-align: left;
+        }
+      }
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
+        display: none;
+        @include mixin.desktop {
+          display: block;
+        }
+      }
+    }
+  }
+  // 멤버십 섹션 시작
+  section.membership {
+    h2 {
+      text-align: center;
+      color: $main-color;
+    }
+    ul {
+        padding: 1rem;
+        width: 450px;
+        height: 350px;
+        background-image: url(../hotel-image/hotel-lobby.png);
+        background-size: cover;
+        background-position: center;
+        margin: 0 auto;
+        @include mixin.flex-layout($diraction:column,$justify:flex-end,$align:flex-start);
+        li{
+          color: $font-sub;
+          h4{
+            font-size: 2rem;
+          }
+        }
     }
   }
 }
-

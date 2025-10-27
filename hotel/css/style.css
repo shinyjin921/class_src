@@ -1,5 +1,5 @@
 header div.bg {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-image: url(../hotel-image/header-hotel.jpg);
   background-size: cover;
@@ -40,6 +40,11 @@ header div.bg nav ul.logo-menu li.logo {
 header div.bg nav ul.logo-menu li.logo img {
   width: 2rem;
 }
+@media all and (min-width: 1024px) {
+  header div.bg nav ul.logo-menu li.logo p {
+    font-size: 1.5rem;
+  }
+}
 header div.bg nav ul.logo-menu li.menu {
   display: flex;
   justify-content: center;
@@ -47,8 +52,33 @@ header div.bg nav ul.logo-menu li.menu {
   flex-direction: row;
   gap: 0;
 }
+@media all and (min-width: 1024px) {
+  header div.bg nav ul.logo-menu li.menu {
+    display: none;
+  }
+}
 header div.bg nav ul.logo-menu li.menu img {
   width: 1.5rem;
+}
+header div.bg nav ul.logo-menu li.desk-menu {
+  display: none;
+}
+@media all and (min-width: 1024px) {
+  header div.bg nav ul.logo-menu li.desk-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 4rem;
+    font-size: 1.5rem;
+    margin: auto;
+    cursor: pointer;
+  }
+  header div.bg nav ul.logo-menu li.desk-menu p:hover {
+    box-sizing: border-box;
+    padding: 0.5rem;
+    font-weight: bolder;
+  }
 }
 header div.bg div.banya {
   height: 60%;
@@ -88,7 +118,7 @@ header div.bg div.menubox {
 }
 @media all and (min-width: 1024px) {
   header div.bg div.menubox {
-    font-size: 2rem;
+    font-size: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,15 +159,12 @@ header div.bg div.menubox div.day-box ul {
 header div.bg div.menubox div.day-box ul li {
   color: #fff;
 }
-header div.bg div.menubox div.day-box ul li p:nth-of-type(1) {
-  font-weight: bold;
-}
 header div.bg div.menubox div.day-box ul li img {
   width: 2rem;
 }
 @media all and (min-width: 1024px) {
   header div.bg div.menubox div.day-box ul li img {
-    width: 4vw;
+    width: 3vw;
   }
 }
 header div.bg div.menubox div.headcount {
@@ -173,18 +200,147 @@ header div.bg div.menubox div.headcount ul li button:hover {
   transition: 0.5s;
 }
 
-main h2 {
-  text-align: center;
+main section.special-offers {
+  width: 100%;
 }
-main ul {
+main section.special-offers h2 {
+  text-align: center;
+  margin: 1rem 0;
+  color: #003D30;
+}
+main section.special-offers div img {
+  width: 1.5rem;
+}
+main section.special-offers ul.spacial-menu {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  gap: 1rem;
+  gap: 0;
   flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
-main ul li {
+@media all and (min-width: 1024px) {
+  main section.special-offers ul.spacial-menu {
+    flex-wrap: nowrap;
+  }
+}
+main section.special-offers ul.spacial-menu li {
+  padding: 0.5rem;
   text-align: center;
   flex: 1 1 30%;
+  font-size: 1.2rem;
+}
+@media all and (min-width: 1024px) {
+  main section.special-offers ul.spacial-menu li:hover {
+    color: #fff;
+    background-color: #C8B89F;
+    transform: scale(1.1);
+    font-weight: bold;
+  }
+}
+main section.special-offers ul.packge {
+  width: 90%;
+  margin: 0 auto;
+  display: none;
+}
+@media all and (min-width: 1024px) {
+  main section.special-offers ul.packge {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+main section.special-offers ul.packge li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+}
+main section.special-offers ul.packge li p:nth-child(1) {
+  color: #003D30;
+  text-align: left;
+  cursor: pointer;
+}
+main section.special-offers ul.packge li img {
+  width: 1rem;
+}
+main ul.offers {
+  position: relative;
+  margin: 1rem 0;
+  padding: 0 2rem;
+}
+@media all and (min-width: 1024px) {
+  main ul.offers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+main ul.offers div.left {
+  position: absolute;
+  left: 4rem;
+}
+main ul.offers div.right {
+  position: absolute;
+  right: 4rem;
+}
+main ul.offers ul.info {
+  height: 300px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0;
+}
+main ul.offers ul.info li {
+  text-align: left;
+  width: 300px;
+}
+main ul.offers ul.info li img {
+  width: 300px;
+  height: 185px;
+}
+main ul.offers ul.info li p {
+  display: block;
+  text-align: left;
+}
+main ul.offers ul.info:nth-of-type(2), main ul.offers ul.info:nth-of-type(3) {
+  display: none;
+}
+@media all and (min-width: 1024px) {
+  main ul.offers ul.info:nth-of-type(2), main ul.offers ul.info:nth-of-type(3) {
+    display: block;
+  }
+}
+main section.membership h2 {
+  text-align: center;
+  color: #003D30;
+}
+main section.membership ul {
+  padding: 1rem;
+  width: 450px;
+  height: 350px;
+  background-image: url(../hotel-image/hotel-lobby.png);
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+}
+main section.membership ul li {
+  color: #fff;
+}
+main section.membership ul li h4 {
+  font-size: 2rem;
 }/*# sourceMappingURL=style.css.map */
