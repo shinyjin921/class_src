@@ -27,6 +27,9 @@ header {
       ul.logo-menu {
         width: 100%;
         @include mixin.flex-layout($justify: space-between, $gap: 0);
+        @include mixin.desktop{
+          height: 50px;
+        }
         li.logo {
           @include mixin.flex-layout($gap: 0.2rem);
           img {
@@ -184,15 +187,14 @@ main {
           &:hover {
             color: $font-sub;
             background-color: $btn-color;
-            transform: scale(1.1);
             font-weight: bold;
           }
         }
       }
     }
     ul.packge {
-      width: 90%;
-      margin: 0 auto;
+      width: 85%;
+      margin: 1rem auto;
       display: none;
       @include mixin.desktop {
         @include mixin.flex-layout($justify: space-between);
@@ -215,46 +217,41 @@ main {
     }
   }
   // 패키지 메뉴들
-  ul.offers {
-    position: relative;
-    margin: 1rem 0;
-    padding: 0 2rem;
-    @include mixin.desktop {
-      @include mixin.flex-layout();
+    div{position: relative;
+      div.diraction-icon{
+        width: 100%;
+        padding: 1rem;
+        position: absolute;
+        top:40%;
+        @include mixin.flex-layout($justify:space-between);
+        @include mixin.desktop{
+          @include mixin.flex-layout($justify:center,$gap:70rem);
+        }
+      img{width: 2rem;}
+      }
     }
-    div.left {
-      position: absolute;
-      left: 4rem;
-    }
-    div.right {
-      position: absolute;
-      right: 4rem;
-    }
-    ul.info {
-      height: 300px;
-      cursor: pointer;
-      @include mixin.flex-layout($diraction: column, $gap: 0);
-      li {
-        text-align: left;
+    ul.offers {      
+      width: 100%;
+      height: 350px;
+      @include mixin.flex-layout($align:flex-start,$gap:4rem);
+      li{
         width: 300px;
-        img {
-          width: 300px;
-          height: 185px;
+        text-align: left;
+        &:nth-of-type(2),
+        &:nth-of-type(3)
+          {  display: none;}
+        @include mixin.desktop{
+        &:nth-of-type(2){display: block;}
+        &:nth-of-type(3){display: block;
+          img{
+            object-fit: cover;
+            height: 164px;
+          }
         }
-        p {
-          display: block;
-          text-align: left;
         }
-      }
-      &:nth-of-type(2),
-      &:nth-of-type(3) {
-        display: none;
-        @include mixin.desktop {
-          display: block;
-        }
+        img{width: 300px;}
       }
     }
-  }
   // 멤버십 섹션 시작
   section.membership {
     h2 {
@@ -262,6 +259,15 @@ main {
       color: $main-color;
     }
     ul {
+      position: relative;
+      @include mixin.flex-layout($align:flex-start);
+      @include mixin.desktop{
+        width: 1028px;
+        margin: 0 auto;
+        height: 450px;
+        @include mixin.flex-layout($justify:flex-start,$align:flex-start,$gap:0);}
+      li{
+        position: absolute;
         padding: 1rem;
         width: 450px;
         height: 350px;
@@ -270,12 +276,25 @@ main {
         background-position: center;
         margin: 0 auto;
         @include mixin.flex-layout($diraction:column,$justify:flex-end,$align:flex-start);
-        li{
-          color: $font-sub;
+        color: $font-sub;
+        &:nth-of-type(1){z-index: 10;}
+        &:nth-of-type(2){
+          background-image: url(../hotel-image/btwin.png);
+        }
+        &:nth-of-type(3){
+          background-image: url(../hotel-image/online.png);
+        }
+        @include mixin.desktop{
+          border-right: 1px solid #fff;
+          width: 800px;
+          &:nth-of-type(2){margin-left: 113px;
+          z-index: 1;}
+          &:nth-of-type(3){margin-left: 226px;}
+        }
           h4{
             font-size: 2rem;
           }
-        }
+      }
     }
   }
 }
