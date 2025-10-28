@@ -110,7 +110,7 @@ header {
             color: $font-sub;
             p {
               &:nth-of-type(1) {
-                // font-weight: bold;
+                font-weight: bold;
               }
             }
             img {
@@ -190,6 +190,7 @@ main {
         }
       }
     }
+    // 패키지 설명
     ul.packge {
       width: 90%;
       margin: 0 auto;
@@ -215,43 +216,47 @@ main {
     }
   }
   // 패키지 메뉴들
-  ul.offers {
+  div {
     position: relative;
-    margin: 1rem 0;
-    padding: 0 2rem;
-    @include mixin.desktop {
-      @include mixin.flex-layout();
-    }
-    div.left {
+    div.diraction-icon {
+      width: 100%;
+      padding: 1rem;
       position: absolute;
-      left: 4rem;
-    }
-    div.right {
-      position: absolute;
-      right: 4rem;
-    }
-    ul.info {
-      height: 300px;
-      cursor: pointer;
-      @include mixin.flex-layout($diraction: column, $gap: 0);
-      li {
-        text-align: left;
-        width: 300px;
-        img {
-          width: 300px;
-          height: 185px;
-        }
-        p {
-          display: block;
-          text-align: left;
-        }
+      top: 40%;
+      @include mixin.flex-layout($justify: space-between);
+      @include mixin.desktop {
+        @include mixin.flex-layout($justify: center, $gap: 70rem);
       }
+      img {
+        width: 2rem;
+      }
+    }
+  }
+  ul.offers {
+    width: 100%;
+    height: 350px;
+    @include mixin.flex-layout($align: flex-start, $gap: 4rem);
+    li {
+      width: 300px;
+      text-align: left;
       &:nth-of-type(2),
       &:nth-of-type(3) {
         display: none;
-        @include mixin.desktop {
+      }
+      @include mixin.desktop {
+        &:nth-of-type(2) {
           display: block;
         }
+        &:nth-of-type(3) {
+          display: block;
+          img {
+            object-fit: cover;
+            height: 164px;
+          }
+        }
+      }
+      img {
+        width: 300px;
       }
     }
   }
@@ -260,8 +265,24 @@ main {
     h2 {
       text-align: center;
       color: $main-color;
+      margin: 1rem 0;
     }
     ul {
+      height: 50vh;
+      position: relative;
+      @include mixin.flex-layout($align: flex-start);
+      @include mixin.desktop {
+        width: 1028px;
+        margin: 0 auto;
+        height: 450px;
+        @include mixin.flex-layout(
+          $justify: flex-start,
+          $align: flex-start,
+          $gap: 0
+        );
+      }
+      li {
+        position: absolute;
         padding: 1rem;
         width: 450px;
         height: 350px;
@@ -269,13 +290,311 @@ main {
         background-size: cover;
         background-position: center;
         margin: 0 auto;
-        @include mixin.flex-layout($diraction:column,$justify:flex-end,$align:flex-start);
-        li{
-          color: $font-sub;
-          h4{
-            font-size: 2rem;
+        @include mixin.flex-layout(
+          $diraction: column,
+          $justify: flex-end,
+          $align: flex-start
+        );
+        color: $font-sub;
+        &:nth-of-type(1) {
+          z-index: 10;
+        }
+        &:nth-of-type(2) {
+          background-image: url(../hotel-image/btwin.png);
+        }
+        &:nth-of-type(3) {
+          background-image: url(../hotel-image/online.png);
+        }
+        @include mixin.desktop {
+          border-right: 1px solid #fff;
+          width: 800px;
+          &:nth-of-type(2) {
+            margin-left: 113px;
+            z-index: 1;
+          }
+          &:nth-of-type(3) {
+            margin-left: 226px;
           }
         }
+        h4 {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+  // 호텔 설명 섹션 시작
+  section {
+    div.top {
+      @include mixin.flex-layout($diraction: column);
+      div.senses {
+        margin: 0 auto;
+        width: 450px;
+        text-align: center;
+        h2 {
+          color: $main-color;
+          letter-spacing: 0.5rem;
+          @include mixin.desktop {
+            letter-spacing: 0.5rem;
+          }
+        }
+        @include mixin.flex-layout($justify: flex-start, $diraction: column);
+        @include mixin.desktop {
+          @include mixin.flex-layout($align: flex-start, $diraction: column);
+          text-align: left;
+          margin-left: 0;
+        }
+        div.btn-more {
+          border-radius: 5px;
+          cursor: pointer;
+          font-weight: bolder;
+          color: $font-sub;
+          width: 140px;
+          height: 35px;
+          background-color: $btn-color;
+          @include mixin.flex-layout($align: center, $gap: 0);
+          img {
+            width: 1rem;
+          }
+          @include mixin.desktop{
+            &:hover{
+              background-color: $btn-hover;
+              color: $btn-color;
+            }
+          }
+        }
+      }
+      img {
+        width: 450px;
+      }
+      @include mixin.desktop {
+        margin: 0 auto;
+        width: 1028px;
+        @include mixin.flex-layout($align: flex-start, $gap: 20px);
+      }
+    }
+    div.bottom {
+      margin: 2rem 0;
+      @include mixin.flex-layout($diraction: column);
+      div.bankers {
+        margin: 0 auto;
+        width: 450px;
+        text-align: center;
+        h2 {
+          color: $main-color;
+          letter-spacing: 0.5rem;
+          @include mixin.desktop {
+            letter-spacing: 0.5rem;
+          }
+        }
+        @include mixin.flex-layout($justify: flex-start, $diraction: column);
+        @include mixin.desktop {
+          @include mixin.flex-layout($align: flex-start, $diraction: column);
+          text-align: left;
+          margin-right: 0;
+        }
+        div.btn-more {
+          border-radius: 5px;
+          cursor: pointer;
+          font-weight: bolder;
+          color: $font-sub;
+          width: 140px;
+          height: 35px;
+          background-color: $btn-color;
+          @include mixin.flex-layout($align: center, $gap: 0);
+          img {
+            width: 1rem;
+          }
+          @include mixin.desktop{
+            &:hover{
+              background-color: $btn-hover;
+              color: $btn-color;
+            }
+          }
+        }
+      }
+      img {
+        width: 450px;
+      }
+      @include mixin.desktop {
+        margin: 0 auto;
+        margin-top: 60px;
+        width: 1028px;
+        @include mixin.flex-layout($diraction:row-reverse,$align: flex-start, $gap: 20px);
+      }
+    }
+  }
+}
+// 메인 영역 끝
+// 푸터 영역 시작
+section.mobile-footer{
+  height: 300px;
+  div.mf-top{
+    padding: 10px;
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    height: 150px;
+    background-color: $btn-color;
+    div.mf-icon{
+      margin-bottom: 10px;
+      @include mixin.flex-layout($justify:flex-end,$gap:2px);
+      img{width: 30px;}
+    }
+    div.mf-font{
+      color: $font-sub;
+      @include mixin.flex-layout();
+      margin-bottom: 20px;
+    }
+    div.but-news{
+      margin: 0 auto;
+      border-radius: 5px;
+      font-weight: bolder;
+      padding: 3px;
+      width: 200px;
+      text-align: center;
+      background-color: $btn-color;
+      color: $font-sub;
+      border: 2px solid #fff;
+    }
+  }
+  div.mf-bottom{
+    background-color: $main-color;
+    padding: 10px;
+    width: 100%;
+    h5{
+      color: $font-sub;
+      font-size: 1rem;
+      font-weight: bolder;
+    }
+      div.bottom-all{
+      @include mixin.flex-layout($justify:space-between,$gap:0);
+      width: 100%;
+      height: 150px;
+      div.mb-p{
+        color: $font-sub;
+        font-size: 14px;
+      }
+      div.footer-logo{
+        @include mixin.flex-layout($diraction:column);
+        p{color: $font-sub;}
+        img{width: 50px;}
+      }
+    }
+  }
+  @include mixin.desktop{display: none;}
+}
+// 데스트버전 푸터
+section.desk-footer{
+  display: none;
+  @include mixin.desktop{
+    display: block;
+  }
+  width: 100%;
+  height: 400px;
+  div.newsletter{
+    margin-top: 30px;
+    height: 200px;
+    background-image: url(../hotel-image/newsletter.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    h5{
+      position: absolute;
+      top: 25px;
+      color: $font-sub;
+      font-size: 25px;
+      font-weight: bolder;
+    }
+    @include mixin.flex-layout($diraction:column,$gap:0);
+    div.email-btn{
+      @include mixin.flex-layout($gap:10px);
+      color: $font-sub;
+      margin-bottom: 5px;
+      div{
+        width: 200px;
+        height: 30px;
+        border: 1px solid $font-sub;
+      }
+      div.self{
+        width: 200px;
+        height: 30px;
+        @include mixin.flex-layout($justify:space-between);
+        font-size: 10px;
+        color: $font-sub;
+        img{
+          width: 10px;
+        }
+      }
+      div.push{
+        cursor: pointer;
+        width: 120px;
+        height: 30px;
+        background-color: $btn-color;
+        text-align: center;
+        line-height: 30px;
+        transition: 0.3s;
+        p{color: $font-sub;
+        font-weight: bolder;
+        &:hover{
+          color: $btn-color;
+        }}
+        &:hover{
+          background-color: $btn-hover;
+        }
+      }
+    }
+    label{
+      width: 645px;
+      @include mixin.flex-layout($justify:flex-start);
+      font-size: 14px;
+      color: #ddd;
+    }
+  }
+  // 푸터정보 상단
+  div.df-bottom{
+    padding: 0 20px;
+    width: 100%;
+    height: 100px;
+    background-color: $btn-color;
+    color: $font-sub;
+    font-weight: bold;
+    @include mixin.flex-layout($gap:0);
+    div.list-info{
+      width: 100%;
+      height: 100px;
+      @include mixin.flex-layout($justify:space-between);
+      // flex: 1/1/30%;
+      div.last-logo{
+        @include mixin.flex-layout($diraction:column,$gap:0);
+        img{width: 30px;}
+      }
+      div.list-font{
+        @include mixin.flex-layout($gap:40px);
+      }
+      div.icon-t-list{
+        @include mixin.flex-layout();
+        img{width: 50px;}
+      }
+    }
+    border-bottom: 2px solid #fff;
+  }
+  div.df-last{
+    padding: 0 20px;
+    width: 100%;
+    height: 100px;
+    @include mixin.flex-layout($justify:space-between);
+    background-color: $btn-color;
+    color: #fff;
+    div.last-font{
+      width: 80%;
+      // @include mixin.flex-layout($gap:0);
+      p{
+        display: inline-block
+      }
+    }
+    div.last-icons{
+      @include mixin.flex-layout();
+      img{width: 50px;
+      height: 50px;}
     }
   }
 }
