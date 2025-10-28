@@ -1,0 +1,805 @@
+header div.bg {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../hotel-image/header-hotel.jpg);
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden;
+}
+header div.bg img.bg-image {
+  width: 100%;
+}
+header div.bg nav {
+  padding: 1rem;
+  color: #fff;
+  box-sizing: border-box;
+  width: 100%;
+}
+header div.bg nav ul.language li {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+header div.bg nav ul.logo-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+}
+@media all and (min-width: 1024px) {
+  header div.bg nav ul.logo-menu {
+    height: 50px;
+  }
+}
+header div.bg nav ul.logo-menu li.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.2rem;
+}
+header div.bg nav ul.logo-menu li.logo img {
+  width: 2rem;
+}
+@media all and (min-width: 1024px) {
+  header div.bg nav ul.logo-menu li.logo p {
+    font-size: 1.5rem;
+  }
+}
+header div.bg nav ul.logo-menu li.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+}
+@media all and (min-width: 1024px) {
+  header div.bg nav ul.logo-menu li.menu {
+    display: none;
+  }
+}
+header div.bg nav ul.logo-menu li.menu img {
+  width: 1.5rem;
+}
+header div.bg nav ul.logo-menu li.desk-menu {
+  display: none;
+}
+@media all and (min-width: 1024px) {
+  header div.bg nav ul.logo-menu li.desk-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 4rem;
+    font-size: 1.5rem;
+    margin: auto;
+    cursor: pointer;
+  }
+  header div.bg nav ul.logo-menu li.desk-menu p:hover {
+    box-sizing: border-box;
+    padding: 0.5rem;
+    font-weight: bolder;
+  }
+}
+header div.bg div.banya {
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+header div.bg div.banya div {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 0px 0px 5px rgba(124, 124, 124, 0.8);
+}
+@media all and (min-width: 1024px) {
+  header div.bg div.banya div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+@media all and (min-width: 1024px) {
+  header div.bg div.banya {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row;
+    gap: 0;
+    font-size: 1.5rem;
+  }
+}
+header div.bg div.menubox {
+  width: 100vw;
+}
+@media all and (min-width: 1024px) {
+  header div.bg div.menubox {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 3rem;
+    cursor: pointer;
+    background-color: rgba(62, 62, 62, 0.5);
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+  }
+}
+header div.bg div.menubox div.day-box {
+  width: 100%;
+  background-color: rgba(62, 62, 62, 0.5);
+}
+@media all and (min-width: 1024px) {
+  header div.bg div.menubox div.day-box {
+    background-color: unset;
+    width: auto;
+  }
+}
+header div.bg div.menubox div.day-box ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+}
+@media all and (min-width: 1024px) {
+  header div.bg div.menubox div.day-box ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
+header div.bg div.menubox div.day-box ul li {
+  color: #fff;
+}
+header div.bg div.menubox div.day-box ul li p:nth-of-type(1) {
+  font-weight: bold;
+}
+header div.bg div.menubox div.day-box ul li img {
+  width: 2rem;
+}
+@media all and (min-width: 1024px) {
+  header div.bg div.menubox div.day-box ul li img {
+    width: 3vw;
+  }
+}
+header div.bg div.menubox div.headcount {
+  display: none;
+  color: #fff;
+}
+@media all and (min-width: 1024px) {
+  header div.bg div.menubox div.headcount {
+    display: block;
+  }
+}
+header div.bg div.menubox div.headcount ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 3rem;
+}
+header div.bg div.menubox div.headcount ul li img {
+  width: 4vw;
+}
+header div.bg div.menubox div.headcount ul li button {
+  background-color: #C8B89F;
+  padding: 2rem;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: bolder;
+  cursor: pointer;
+}
+header div.bg div.menubox div.headcount ul li button:hover {
+  color: #C8B89F;
+  background-color: #F7F4F1;
+  transition: 0.5s;
+}
+
+main section.special-offers {
+  width: 100%;
+}
+main section.special-offers h2 {
+  text-align: center;
+  margin: 1rem 0;
+  color: #003D30;
+}
+main section.special-offers div img {
+  width: 1.5rem;
+}
+main section.special-offers ul.spacial-menu {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+@media all and (min-width: 1024px) {
+  main section.special-offers ul.spacial-menu {
+    flex-wrap: nowrap;
+  }
+}
+main section.special-offers ul.spacial-menu li {
+  padding: 0.5rem;
+  text-align: center;
+  flex: 1 1 30%;
+  font-size: 1.2rem;
+}
+@media all and (min-width: 1024px) {
+  main section.special-offers ul.spacial-menu li:hover {
+    color: #fff;
+    background-color: #C8B89F;
+    font-weight: bold;
+  }
+}
+main section.special-offers ul.packge {
+  width: 85%;
+  margin: 1rem auto;
+  display: none;
+}
+@media all and (min-width: 1024px) {
+  main section.special-offers ul.packge {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+main section.special-offers ul.packge li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+}
+main section.special-offers ul.packge li p:nth-child(1) {
+  color: #003D30;
+  text-align: left;
+  cursor: pointer;
+}
+main section.special-offers ul.packge li img {
+  width: 1rem;
+}
+main div {
+  position: relative;
+}
+main div div.diraction-icon {
+  width: 100%;
+  padding: 1rem;
+  position: absolute;
+  top: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+@media all and (min-width: 1024px) {
+  main div div.diraction-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 70rem;
+  }
+}
+main div div.diraction-icon img {
+  width: 2rem;
+}
+main ul.offers {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  gap: 4rem;
+}
+main ul.offers li {
+  width: 300px;
+  text-align: left;
+}
+main ul.offers li:nth-of-type(2), main ul.offers li:nth-of-type(3) {
+  display: none;
+}
+@media all and (min-width: 1024px) {
+  main ul.offers li:nth-of-type(2) {
+    display: block;
+  }
+  main ul.offers li:nth-of-type(3) {
+    display: block;
+  }
+  main ul.offers li:nth-of-type(3) img {
+    object-fit: cover;
+    height: 164px;
+  }
+}
+main ul.offers li img {
+  width: 300px;
+}
+main section.membership h2 {
+  text-align: center;
+  color: #003D30;
+  margin: 1rem 0;
+}
+main section.membership ul {
+<<<<<<< HEAD
+  height: 50vh;
+=======
+>>>>>>> a3b1939f78233d1d8f6030518260d2b6c414392f
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  gap: 1rem;
+}
+@media all and (min-width: 1024px) {
+  main section.membership ul {
+    width: 1028px;
+    margin: 0 auto;
+    height: 450px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 0;
+  }
+}
+main section.membership ul li {
+  position: absolute;
+  padding: 1rem;
+  width: 450px;
+  height: 350px;
+  background-image: url(../hotel-image/hotel-lobby.png);
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+  color: #fff;
+}
+main section.membership ul li:nth-of-type(1) {
+  z-index: 10;
+}
+main section.membership ul li:nth-of-type(2) {
+  background-image: url(../hotel-image/btwin.png);
+}
+main section.membership ul li:nth-of-type(3) {
+  background-image: url(../hotel-image/online.png);
+}
+@media all and (min-width: 1024px) {
+  main section.membership ul li {
+    border-right: 1px solid #fff;
+    width: 800px;
+  }
+  main section.membership ul li:nth-of-type(2) {
+    margin-left: 113px;
+    z-index: 1;
+  }
+  main section.membership ul li:nth-of-type(3) {
+    margin-left: 226px;
+  }
+}
+main section.membership ul li h4 {
+  font-size: 2rem;
+}
+main section div.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+main section div.top div.senses {
+  margin: 0 auto;
+  width: 450px;
+  text-align: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+main section div.top div.senses h2 {
+  color: #003D30;
+  letter-spacing: 0.5rem;
+}
+@media all and (min-width: 1024px) {
+  main section div.top div.senses h2 {
+    letter-spacing: 0.5rem;
+  }
+}
+@media all and (min-width: 1024px) {
+  main section div.top div.senses {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+    margin-left: 0;
+  }
+}
+main section div.top div.senses div.btn-more {
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bolder;
+  color: #fff;
+  width: 140px;
+  height: 35px;
+  background-color: #C8B89F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+}
+main section div.top div.senses div.btn-more img {
+  width: 1rem;
+}
+@media all and (min-width: 1024px) {
+  main section div.top div.senses div.btn-more:hover {
+    background-color: #F7F4F1;
+    color: #C8B89F;
+  }
+}
+main section div.top img {
+  width: 450px;
+}
+@media all and (min-width: 1024px) {
+  main section div.top {
+    margin: 0 auto;
+    width: 1028px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+main section div.bottom {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+main section div.bottom div.bankers {
+  margin: 0 auto;
+  width: 450px;
+  text-align: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+main section div.bottom div.bankers h2 {
+  color: #003D30;
+  letter-spacing: 0.5rem;
+}
+@media all and (min-width: 1024px) {
+  main section div.bottom div.bankers h2 {
+    letter-spacing: 0.5rem;
+  }
+}
+@media all and (min-width: 1024px) {
+  main section div.bottom div.bankers {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+    margin-right: 0;
+  }
+}
+main section div.bottom div.bankers div.btn-more {
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bolder;
+  color: #fff;
+  width: 140px;
+  height: 35px;
+  background-color: #C8B89F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+}
+main section div.bottom div.bankers div.btn-more img {
+  width: 1rem;
+}
+@media all and (min-width: 1024px) {
+  main section div.bottom div.bankers div.btn-more:hover {
+    background-color: #F7F4F1;
+    color: #C8B89F;
+  }
+}
+main section div.bottom img {
+  width: 450px;
+}
+@media all and (min-width: 1024px) {
+  main section div.bottom {
+    margin: 0 auto;
+    margin-top: 60px;
+    width: 1028px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row-reverse;
+    gap: 20px;
+  }
+}
+
+section.mobile-footer {
+  height: 300px;
+}
+section.mobile-footer div.mf-top {
+  padding: 10px;
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  height: 150px;
+  background-color: #C8B89F;
+}
+section.mobile-footer div.mf-top div.mf-icon {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  gap: 2px;
+}
+section.mobile-footer div.mf-top div.mf-icon img {
+  width: 30px;
+}
+section.mobile-footer div.mf-top div.mf-font {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 20px;
+}
+section.mobile-footer div.mf-top div.but-news {
+  margin: 0 auto;
+  border-radius: 5px;
+  font-weight: bolder;
+  padding: 3px;
+  width: 200px;
+  text-align: center;
+  background-color: #C8B89F;
+  color: #fff;
+  border: 2px solid #fff;
+}
+section.mobile-footer div.mf-bottom {
+  background-color: #003D30;
+  padding: 10px;
+  width: 100%;
+}
+section.mobile-footer div.mf-bottom h5 {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bolder;
+}
+section.mobile-footer div.mf-bottom div.bottom-all {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  width: 100%;
+  height: 150px;
+}
+section.mobile-footer div.mf-bottom div.bottom-all div.mb-p {
+  color: #fff;
+  font-size: 14px;
+}
+section.mobile-footer div.mf-bottom div.bottom-all div.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+section.mobile-footer div.mf-bottom div.bottom-all div.footer-logo p {
+  color: #fff;
+}
+section.mobile-footer div.mf-bottom div.bottom-all div.footer-logo img {
+  width: 50px;
+}
+@media all and (min-width: 1024px) {
+  section.mobile-footer {
+    display: none;
+  }
+}
+
+section.desk-footer {
+  display: none;
+  width: 100%;
+  height: 400px;
+}
+@media all and (min-width: 1024px) {
+  section.desk-footer {
+    display: block;
+  }
+}
+section.desk-footer div.newsletter {
+  margin-top: 30px;
+  height: 200px;
+  background-image: url(../hotel-image/newsletter.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0;
+}
+section.desk-footer div.newsletter h5 {
+  position: absolute;
+  top: 25px;
+  color: #fff;
+  font-size: 25px;
+  font-weight: bolder;
+}
+section.desk-footer div.newsletter div.email-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+section.desk-footer div.newsletter div.email-btn div {
+  width: 200px;
+  height: 30px;
+  border: 1px solid #fff;
+}
+section.desk-footer div.newsletter div.email-btn div.self {
+  width: 200px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  font-size: 10px;
+  color: #fff;
+}
+section.desk-footer div.newsletter div.email-btn div.self img {
+  width: 10px;
+}
+section.desk-footer div.newsletter div.email-btn div.push {
+  cursor: pointer;
+  width: 120px;
+  height: 30px;
+  background-color: #C8B89F;
+  text-align: center;
+  line-height: 30px;
+  transition: 0.3s;
+}
+section.desk-footer div.newsletter div.email-btn div.push p {
+  color: #fff;
+  font-weight: bolder;
+}
+section.desk-footer div.newsletter div.email-btn div.push p:hover {
+  color: #C8B89F;
+}
+section.desk-footer div.newsletter div.email-btn div.push:hover {
+  background-color: #F7F4F1;
+}
+section.desk-footer div.newsletter label {
+  width: 645px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  font-size: 14px;
+  color: #ddd;
+}
+section.desk-footer div.df-bottom {
+  padding: 0 20px;
+  width: 100%;
+  height: 100px;
+  background-color: #C8B89F;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  border-bottom: 2px solid #fff;
+}
+section.desk-footer div.df-bottom div.list-info {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+section.desk-footer div.df-bottom div.list-info div.last-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0;
+}
+section.desk-footer div.df-bottom div.list-info div.last-logo img {
+  width: 30px;
+}
+section.desk-footer div.df-bottom div.list-info div.list-font {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 40px;
+}
+section.desk-footer div.df-bottom div.list-info div.icon-t-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+section.desk-footer div.df-bottom div.list-info div.icon-t-list img {
+  width: 50px;
+}
+section.desk-footer div.df-last {
+  padding: 0 20px;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  background-color: #C8B89F;
+  color: #fff;
+}
+section.desk-footer div.df-last div.last-font {
+  width: 80%;
+}
+section.desk-footer div.df-last div.last-font p {
+  display: inline-block;
+}
+section.desk-footer div.df-last div.last-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+section.desk-footer div.df-last div.last-icons img {
+  width: 50px;
+  height: 50px;
+}/*# sourceMappingURL=style.css.map */

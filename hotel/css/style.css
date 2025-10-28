@@ -30,6 +30,11 @@ header div.bg nav ul.logo-menu {
   flex-direction: row;
   gap: 0;
 }
+@media all and (min-width: 1024px) {
+  header div.bg nav ul.logo-menu {
+    height: 50px;
+  }
+}
 header div.bg nav ul.logo-menu li.logo {
   display: flex;
   justify-content: center;
@@ -239,13 +244,12 @@ main section.special-offers ul.spacial-menu li {
   main section.special-offers ul.spacial-menu li:hover {
     color: #fff;
     background-color: #C8B89F;
-    transform: scale(1.1);
     font-weight: bold;
   }
 }
 main section.special-offers ul.packge {
-  width: 90%;
-  margin: 0 auto;
+  width: 85%;
+  margin: 1rem auto;
   display: none;
 }
 @media all and (min-width: 1024px) {

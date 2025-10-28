@@ -27,6 +27,9 @@ header {
       ul.logo-menu {
         width: 100%;
         @include mixin.flex-layout($justify: space-between, $gap: 0);
+        @include mixin.desktop{
+          height: 50px;
+        }
         li.logo {
           @include mixin.flex-layout($gap: 0.2rem);
           img {
@@ -184,7 +187,6 @@ main {
           &:hover {
             color: $font-sub;
             background-color: $btn-color;
-            transform: scale(1.1);
             font-weight: bold;
           }
         }
@@ -192,8 +194,8 @@ main {
     }
     // 패키지 설명
     ul.packge {
-      width: 90%;
-      margin: 0 auto;
+      width: 85%;
+      margin: 1rem auto;
       display: none;
       @include mixin.desktop {
         @include mixin.flex-layout($justify: space-between);
