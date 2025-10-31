@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js if문 사용</title>
+</head>
+<body>
+  <script>
+    // alert("확인창");
+    // confirm("확인창");
+    // let data = prompt("입력")
+    // console.log(data);
+    // console.log(typeof data);
+    // document.write(`<h1>${data}</h1>`);
+    // document.write(`<h1> + data + </h1>`)
+    //사용자가 입력값을 입력을 하면
+    //참 -->"입력 값 : 실제입력값" 출력
+    //거짓 --> "값을 입력하세요" 출력
+    // console.log( data );
+    // if( data ){
+    //   document.write(`<h1>입력값:${data}</h1>`);
+    // }else{
+    //   document.write("값을 입력하세요");}
+
+    //사용자로부터 비밀번호를 입력받습니다
+    //입력한 비밀번호가 0070이면
+    //참이면 "로그인 성공"을 출력
+    //거짓이면 "비밀번호가 틀렸습니다" 출력
+    //출력은 <p>태그로 출력하세요
+    //1.사용자로부터 입력:inputData=promp("비밀번호입력")
+    //2.비교 조건: inputData === "0070"
+    //3.결과를 변수에 저장합니다.:result
+    //4.출력 document.write(p)
+
+    //전역변수>전체 영역에서 사용 가능한 변수
+    "use strict";
+    let inputData = prompt("비밀번호입력");
+    // let result;
+    if( inputData === '0070'){
+      //지역변수
+      let result = '로그인성공';
+    }else{
+      result = '비밀번호가 틀렸습니다';
+    }
+    document.write(`<p>${result}</p>`);
+  </script>
+</body>
+</html>

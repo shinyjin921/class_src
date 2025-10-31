@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건문</title>
+</head>
+<body>
+  <script>
+    /*
+    *사용자로부터 점수를 입력 받습니다.
+    score = promp
+    입력받은 점수에 따라 성적등급을 구분
+    if
+    점수>=90점 -->A학점
+    // 점수>=80점 -->B학점
+    // 점수>=70점 -->C학점
+    // 나머지는 F학점
+    // */
+  // let score = Number(prompt("점수를입력"));
+  // if(score>=90){
+  //   console.log("A학점");
+  // }else if(score>=80){
+  //   console.log("B학점");
+  // }else if(score>=70){
+  //   console.log("C학점")
+  // }else{
+  //   console.log("F학점");
+  // }
+  /*사용자로부터 apple,banana,orange를 입력
+  *만약에 apple 입력받으면 "사과 선택" 출력
+  *banana를 입력 받으면 "바나나 선택" 출력
+  *orange를 입력 받으면 "오렌지 선택" 출력
+  *출력h1태그
+  */
+    // let inputData = prompt("apple,banana,orange중 하나 입력");
+    //   let result;
+    // if(inputData === "apple"){
+    //   result = "사과 선택"
+    // }else if( inputData === "banana"){
+    //   result = "바나나 선택"
+    // }else if( inputData === "orange"){
+    //   result = "오렌지 선택"
+    // }else{
+    //   result = "사과,바나나,오렌지중 하나를 입력하세요"
+    // }
+    // switch(inputData){
+    //   case "apple" : result="사과 선택";
+    //   break; //종료:멈춰라(동일한 값을 발견했을때 멈춰라)//해당문구를 발견하면 가장 아래의 중괄호로 이동
+    //   case "banana" : result="바나나 선택";
+    //   break
+    //   case "orange" :result="오렌지 선택";
+    //   break;
+    //   default:
+    //     result="사과,바나나,오렌지중 하나를 입력하세요"
+    // }
+    // document.write(`<h1>${result}</h1>`);
+
+    //3의 배수 표시
+    // let data = 5;
+    // switch(data%3){
+    //   case 0:document.write('나머지가 0 입니다')
+    //   break;
+    //   case 1:document.write('나머지가 1입니다')
+    //   break;
+    //   case 2:document.write('나머지가 2입니다')
+    //   break;
+    // }
+
+    /*
+    *switch case문 활용
+    *사용자로부터 월을 입력 받습니다
+    *3~5월은 봄 입니다 출력
+    *6~8월은 여름 입니다 출력
+    *9~11월은 가을 입니다 출력
+    *12~2월은 겨울입니다 출력
+    * */
+  // let inputData = prompt("1월~12월중 하나를 입력")
+  // switch(inputData){
+  //   case "3" :
+  //   case "4" :
+  //   case "5" :
+  //     document.write(`<h1>봄 입니다</h1>`);
+  //     break;
+  //   case "6" :
+  //   case "7" :
+  //   case "8" :
+  //     document.write(`<h1>여름 입니다</h1>`);
+  //     break;
+  //   case "9" :
+  //   case "10" :
+  //   case "11" :
+  //     document.write(`<h1>가을 입니다</h1>`);
+  //     break;
+  //     default:document.write(`<h1>겨울 입니다</h1>`);
+  //   }
+  // if(inputData==='3'|| inputData==='4'|| inputData==='5'){
+  //   document.write(`<h1>봄 입니다</h1>`);
+  // }else if(inputData==='6'|| inputData==='7'|| inputData==='8'){
+  //   document.write(`<h1>여름 입니다</h1>`);
+  // }else if(inputData==='9'|| inputData==='10'|| inputData==='11'){
+  //   document.write(`<h1>가을 입니다</h1>`);
+  // }else{
+  //   default:document.write(`<h1>겨울 입니다</h1>`);
+  // }
+
+  // 월>3 and 5<월
+  // let month = Number(prompt("1~12월까지 하나를 입력"));
+  // if( month>=3 && month<=5){
+  //   document.write(`<h1>봄 입니다</h1>`);
+  // }else if( month>=6 && month<=8){
+  //   document.write(`<h1>여름 입니다</h1>`);
+  // }else if( month>=9 && month<= 11){
+  //   document.write(`<h1>가을 입니다</h1>`);
+  // }else{
+  //   document.write(`<h1>겨울 입니다</h1>`);
+  // }
+let site = prompt("네이버,다음,구글 중 하나를 입력");
+let result;
+switch(site){
+  case "네이버" :result="www.naver.com";
+  break;
+  case "다음" :result="www.daum.com";
+  break;
+  case "구글" : result="www.google.com";
+  break;
+  default:alert("네이버,다음,구글중 하나 선택");
+}
+if( result ){
+  location.href=`https://${result}`;
+}
+</script>
+</body>z
+</html>
