@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>버튼!</button>
+  <script>
+    //변수:전역변수,지역변수({}사이에서 사용되는 변수)
+    let userName = '홍길동'; //전역변수
+    const elem = document.querySelector('button');
+    //버튼을 클릭을 하면 ~님 환영합니다 출력(alert)
+    elem.onclick= () =>{
+      // let userName="춘향이";//지역변수
+      alert(`${userName}님 환영합니다`);
+    }
+  </script>
+</body>
+</html>

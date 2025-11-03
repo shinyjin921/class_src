@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>테이블 만들기</title>
+</head>
+<body>
+  <script>
+    let count = 0;
+    document.write('<table border="1">');
+      for(let i=0; i<5; i++){
+        document.write('<tr>');
+          for(let j=0; j<5; j++){
+            // document.write(`<td>${i}-${j}</td>`);
+            document.write(`<td>${++count}</td>`);
+          }
+        document.write('</tr>');
+      }
+    document.write('</table>');
+  </script>
+</body>
+</html>

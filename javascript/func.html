@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>익명함수 사용</title>
+</head>
+<body>
+  <button>클릭!</button>
+  <script>
+    //변수:전역변수,지역변수 
+    const elem = document.querySelector('button');
+    // console.log( elem );
+    const handleClick = () =>{
+      alert("버튼을 클릭했습니다");
+    }
+    // elem.onclick = handleClick;
+    elem.onclick = ()=>{
+      alert("익명함수 실행");
+    }
+    // elem.onclick = ()=>{
+    //   alert("버튼을 클릭했습니다");
+    // }
+  </script>
+</body>
+</html>
