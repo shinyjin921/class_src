@@ -33,17 +33,23 @@
     //3.결과를 변수에 저장합니다.:result
     //4.출력 document.write(p)
 
-    //전역변수>전체 영역에서 사용 가능한 변수
+    // 전역변수>전체 영역에서 사용 가능한 변수
     "use strict";
     let inputData = prompt("비밀번호입력");
-    // let result;
+    let result;
     if( inputData === '0070'){
       //지역변수
-      let result = '로그인성공';
+      result = '로그인성공';
     }else{
       result = '비밀번호가 틀렸습니다';
     }
     document.write(`<p>${result}</p>`);
+
+
+    let userName = "신유진";
+    let result2 = `저는 `+ userName + ` 입니다`;
+    let result3 = `저는 ${userName} 입니다`;
+    document.write(`${result2}`);
   </script>
 </body>
 </html>

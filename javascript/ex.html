@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 이름.나이,성별의 값을 받아서 출력
+  20살 이상 성인 여자만 입장할수 있는 클럽
+  값을 통해 "입장이 가능하다" "입장이 불가능하다 출력"
+  이름,나이,성별도 다 출력-->
+  <script>
+    // let userName = prompt("이름을 입력해 주세요.");
+    // let age = prompt("나이를 입력해주세요.");
+    // let gender = confirm("당신은 여성입니까?");
+    // let gendertxt = "";
+    // let result = "입장이 불가능합니다";
+    // if (age > 19) {
+    //   if (gender) {
+    //     result = "입장이 가능합니다"
+    //   }
+    // }
+    // if (gender) {
+    //   gendertxt = "여성";
+    // } else {
+    //   gendertxt = "남성";
+    // }
+    // document.write(`<p>${userName},${age},${gendertxt},${result}</p>`);
+    // let enter = "입장";
+    // let age = prompt("나이를 입력하세요");
+    // // 10살만 입장
+    // if( age == 10 || age == 20 || age == 30 || age == 40 || age == 50 ){
+    // }else{
+    //   enter ="불가";
+    // }
+    // document.write(`${enter}`)
+    // /*사용자로부터 apple,banana,orange를 입력
+    // *만약에 apple 입력받으면 "사과 선택" 출력
+    // *banana를 입력 받으면 "바나나 선택" 출력
+    // *orange를 입력 받으면 "오렌지 선택" 출력
+    // *출력h1태그
+    // let fruit=prompt("apple,banana,orange중 하나를 입력하세요");
+    // switch(fruit){
+    //   case "apple" :
+    //     document.write(`<h1>사과 선택</h1>`);
+    //     break;
+    //   case "banana" :
+    //     document.write(`<h1>바나나 선택</h1>`);
+    //     break;
+    //   case "orange" :
+    //     document.write(`<h1>오렌지 선택</h1>`);
+    //     break;
+    //   default :
+    //     document.write(`<h1>과일을 선택해 주세요</h1>`);
+    //     break;
+    // }
+    for (let i=1; i<=10; i++){
+      if(i%2 == 0){
+      document.write(`${i}번째 반복입니다.<br>`);
+      }
+    }
+    let colors = ["red", "green", "blue"];
+
+    for (let aa of colors) {
+      if(aa=="red"){
+        document.write("정렬의 색상");
+      }
+      document.write("색상:", aa+"<br>");
+    }
+
+  </script>
+</body>
+
+</html>
