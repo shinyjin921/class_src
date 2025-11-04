@@ -9,26 +9,37 @@
  * 5.수량이 MAX_LAN일때는 (+)버튼을 비활성화 합니다
 */
 
-const MAX_LEN = 10;
+const MAX_LAN = 10;
+let count = 1;
 const minusBtn =document.querySelector('.product>button:nth-child(1)');
 const plusBtn = document.querySelector('.product>button:nth-child(3)');
 const pElem = document.querySelector('div>p');
 
-for($pElem of MAX_LEN){
+plusBtn.onclick = ()=>{
+  count++;
+  if( count >= MAX_LAN ){
+    count = MAX_LAN;
+    plusBtn.disabled = true;
+  }
+  minusBtn.disabled = false;
+  pElem.innerHTML = `${count}`;
 }
 
-$plusBtn.onclikck =() =>{
-  MAX_LEN++;
-  if(MAX_LEN <= 10){
-    MAX_LEN = 10
-    $plusBtn.disabled = true;
+minusBtn.onclick = ()=>{
+  count--;
+  if (count <= 1){
+    count = 1;
+    minusBtn.disabled = true;
   }
+  plusBtn.disabled = false;
+  pElem.innerHTML = `${count}`;
 }
-console.log( $plusBtn );
-$minusBtn.onclikck = ()=>{
-  MAX_LEN--;
-  if(MAX_LEN <= 1 ){
-    MAX_LEN = 1
-    $minusBtn.disabled = true;
-  }
+
+const init = ()=>{
+  minusBtn.disabled =true;
+  count = 1;
+  pElem.innerHTML = `${count}`;
 }
+
+init();
+
