@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>class list 활용</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    a{text-decoration: none; color: inherit; display: block;}
+    ul{list-style: none;}
+    nav{
+      width: 200px;
+      height: 100vh;
+      background-color: #ddd;
+      position: fixed;
+      top: 0;
+      left: -200px;
+      transition: 0.5s;
+      ul{
+        text-align: center;
+        li{
+          margin: 0.5rem 0;
+        }
+      }
+    }
+    .menu-btn{
+      position: fixed;
+      top: 0;
+      left: 0px;
+      transition: 0.5s;
+      cursor: pointer;
+    }
+    .open > menu-btn{
+      left:200px;
+    }
+    .open > nav{
+      left: 0;
+    }
+    main{
+      text-align: right;
+      padding: 1rem;
+      height: 100vh;
+      box-sizing: border-box;
+      background-color: #eee;
+    }
+    main.dark{
+      background-color: #222;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <main>라이트모드</main>
+  <button class="menu-btn">메뉴</button>
+  <nav>
+    <ul>
+      <li><a href="#">모드변경</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Docs</a></li>
+    </ul>
+  </nav>
+  <script>
+    //바디는 요소 선택을 하지 않아도 됨
+    //버튼을 클릭을 했을때 body에 class가 추가/삭제:toggle
+    //버튼 요소를 선택
+    const btnElem = document.querySelector('.menu-btn');
+    btnElem.onclick = ()=>{
+      document.body.classList.toggle('open');
+    }
+    //모드변경
+    const modeMenu =document.querySelector('nav>ul>li:nth-child(1)');
+    modeMenu.onclick = ()=>{
+      //메인 요소를 가져오기
+      const mainElem = document.querySelector('main');
+      console.dir(mainElem); //프로퍼티 확인 가능
+      mainElem.classList.toggle('dark');
+      if(mainElem.textContent === '라이트모드'){
+        mainElem.textContent = '다크모드';
+      }else{
+        mainElem.textContent = '라이트모드';
+      }
+      }
+    // const modeElem =document.querySelector('ul>li:nth-child(1)');
+    // modeElem.onclick = ()=>{
+    //   if( modeElem )
+    // }
+</script>
+</body>
+</html>

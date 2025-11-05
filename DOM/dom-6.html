@@ -6,11 +6,27 @@
   <title>상품 상세수량</title>
   <style>
     *{margin: 0; padding: 0;}
+    body{}
+    #wrap{
+      display: flex;
+      justify-content: center;
+      gap:1rem;
+    }
     main{
       width: 300px;
-      margin: 1rem auto;
+      /* margin: 1rem auto; */
     }
-    img{width: 100%;}
+    img{
+      display: block;
+      width: 100%;}
+    aside{
+      width: 100px;
+      img{
+        cursor: pointer;
+        opacity: 0.7;
+        &:hover{opacity: 1;}
+      }
+    }
     .product{
       margin: 0.5rem 0;
       display: flex;
@@ -26,11 +42,32 @@
         flex: 1;
       }
     }
+    #detail{
+      width: 400px;
+      margin: 1rem auto;
+      button{
+        display: block;
+        width: 100%;
+      }
+      .txt{
+        background-color: #ddd;
+        padding: 1rem 0;
+      }
+    }
+    .hide{
+      display: none;
+    }
   </style>
   <!-- dom구조가 만들어지면 script를 실행시켜라 -->
   <!-- <script src="./dom-6.js" defer></script> --> 
 </head>
 <body>
+  <div id="wrap">
+  <aside>
+    <img src="./images/img-02.png" alt="상품이미지2">
+    <img src="./images/img-03.png" alt="상품이미지3">
+    <img src="./images/img-04.png" alt="상품이미지4">
+  </aside>
   <main>
     <img src="./images/img-01.png" alt="상품이미지">
     <div class="product">
@@ -39,6 +76,14 @@
       <button>+</button>
     </div>
   </main>
+  </div>
+  <div id="detail">
+    <button>상세설명보기</button>
+    <div class="txt hide">
+      <p>상세설명입니다.</p>
+      <p>화면에 보였다 안보였다 합니다.</p>
+    </div>
+  </div>
   <script src="./dom-6.js"></script>
 </body>
 </html>

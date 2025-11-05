@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>요소 생성,삽입,삭제</title>
+</head>
+<body>
+  <main>
+    <button class="add">요소추가</button>
+    <!-- <button>클릭</button> -->
+    <!-- <ul>
+      <li>리스트1</li>
+      <li>리스트2</li>
+      <li>리스트3</li>
+    </ul> -->
+    <button class="del">요소 삭제</button>
+  </main>
+  <script>
+    const addBtn = document.querySelector('.add');
+    const delBtn = document.querySelector('.del');
+    const mainElem =document.querySelector('main');
+    addBtn.onclick = ()=>{
+      //버튼 요소를 생성
+      const btn = document.createElement('button');
+      btn.textContent = '클릭';
+      //메인 안에 추가
+      mainElem.append(btn);
+      //ul>li * 3
+      const ulElem = document.createElement('ul');
+      for(let i = 1; i<4 ; i++){
+        const liElem = document.createElement('li');
+        liElem.textContent=`리스트${i}`;
+        ulElem.append(liElem);
+      }
+      mainElem.append(ulElem);
+      /**
+       * 요소를 생성:createElement
+       * 어디에 추가
+       * 맨 뒤에 추가 :append()
+       * 맨 앞에 추가 :prepend()
+       * 요소 앞/뒤에 추가: before() / after()
+       * */
+      //p요소생성
+      const pElem = document.createElement('p');
+      pElem.textContent = 'p태그 생성 추가';
+      
+      // mainElem.prepend(pElem);
+      // mainElem.before(pElem);
+      mainElem.after(pElem);
+    }
+    //삭제 버튼을 클릭했을때
+    delBtn.onclick = ()=>{
+      //p태그 삭제
+      const pElem =document.querySelector('p');
+      pElem.remove();
+    }
+  </script>
+</body>
+</html>
