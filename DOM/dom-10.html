@@ -3,24 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>장바구니 요소 생성</title>
+  <title>요소 생성</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    ul{list-style: none;}
+    ul{
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      li{
+        width: 200px;
+        aspect-ratio: 2/3;
+        .bg{
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+        }
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- 상품a~e까지,가격은 순서대로 1000,15000,40000,20000,350000-->
-  <!-- 각 상품별 상품 A (가격) 장바구니 추가(버튼)이 한 라인 -->
-  <!-- 장바구니 추가 버튼을 누르면 하단 장바구니 란에 해당 상품이 담겨짐 -->
-  <!-- 마지막 총 가격도 더 해짐 //자바에서 ul,li를 만들어서 생성해볼것,장바구니 란에서 삭제를 누르면 해당 상품이 지워질것-->
-  <main>
+  <!-- <main>
     <h1>쇼핑몰 장바구니</h1>
     <button>장바구니 추가</button>
-  </main>
+  </main> -->
   <script>
+    /**
+     * ul>li
+    */
     //ul>li요소를 만들어야함
     const ulElem = document.createElement('ul');
-    for( let i=1; i==5; i++ ){
+    for( let i=1; i <=3; i++ ){
     const liElem = document.createElement('li');
-    liElem.textContent ='상품 ${}'
-    }
+      //div 생성
+    const bgElem = document.createElement('div');
+    bgElem.className = 'bg';
+    bgElem.style.backgroundImage = `url(./images/img-0${i}.png)`;
+    //.txt 인 영역
+    const txtElem = document.createElement('div');
+    const pElem = document.createElement('p')
+    pElem.textContent = `${i}번 이미지 설명`;
+    const btnElem = document.createElement('button');
+    btnElem.dataset.counter = 0;
+    const spanElem = document.createElement('span');
+    spanElem.className = 'counter';
+    spanElem.textContent=0;
+    btnElem.append(spanElem);
+    // btnElem.textContent = '좋아요';
+    btnElem.append('좋아요');
+    txtElem.append(pElem);
+    txtElem.append(btnElem);
+    liElem.append(bgElem);
+    liElem.append(txtElem);
+    ulElem.append(liElem);
+  }
+  document.body.append(ulElem);
   </script>
 </body>
 </html>

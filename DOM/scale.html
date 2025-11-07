@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  *{margin: 0; padding: 0;}
+  .image-box{
+    width: 100px;
+    height: 100vh;
+    margin: 5rem auto;
+    img{
+    width: 100px;
+    height: 100px;
+    transition: 0.5s;
+    &:hover{
+      transform: scale(1.2);
+    }
+    }
+  }
+</style>
+<body>
+  <div class="image-box">
+    <img src="images/img-01.png" alt="기본 이미지">
+    <div class="popup-image">
+      <img src="images/img-01.png" alt="이것은 이미지 1의 설명입니다.클릭하면 크게 보입니다">
+    </div>
+  </div>
+  <script>
+
+  </script>
+</body>
+</html>
