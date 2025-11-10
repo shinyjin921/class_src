@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+main{
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+ul.slider{
+    position: absolute; /*height값이 없어지므로 main에 height값을 줘야함*/
+    top: 0;
+    left: 0;
+    /*슬라이더가 하나씩 움직여야함 포지션 값으로 줌*/
+    width: 1500px;
+    display: flex;  
+    transition: 0.5s;   /*중간이동과정보이도록*/
+    li{
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
+}
+
+.btn-wrap{
+    text-align: center;
+    button{
+        font-size: 2rem;
+        padding: 10px;
+        /*버튼이 인라인방식이라서 이미 정렬되어있는 공간이 마련되어있어서 
+        text-align으로 중앙정렬이 됨*/
+        /* pointer-events: none; */
+    }
+}
