@@ -14,11 +14,7 @@ const disableButtons = ()=>{
     prevBtn.style.pointerEvents = 'none';
     nextBtn.style.pointerEvents = 'none';
 }
-//버튼 활성화 함수
-const enableButtons = ()=>{
-    prevBtn.style.pointerEvents = 'auto';
-    nextBtn.style.pointerEvents = 'auto';
-}
+
 
 //prev버튼 처리될 때 실행되는 함수
 const handlePrevClick = ()=>{
